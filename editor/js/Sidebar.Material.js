@@ -57,6 +57,16 @@ function SidebarMaterial( editor ) {
 
 	container.add( materialSlotRow );
 	
+	// type
+
+	var materialClassRow = new UIRow();
+	var materialClass = new UISelect().setWidth( '150px' ).setFontSize( '12px' ).onChange( update );
+
+	materialClassRow.add( new UIText( strings.getKey( 'sidebar/material/type' ) ).setWidth( '90px' ) );
+	materialClassRow.add( materialClass );
+
+	container.add( materialClassRow );
+	
 	// uuid
 
 	var materialUUIDRow = new UIRow();
