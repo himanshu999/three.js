@@ -696,18 +696,6 @@ function SidebarMaterial( editor ) {
 
 		}
 
-		if ( material.emissiveMap !== undefined ) {
-
-			materialEmissiveMapEnabled.setValue( material.emissiveMap !== null );
-
-			if ( material.emissiveMap !== null || resetTextureSelectors ) {
-
-				materialEmissiveMap.setValue( material.emissiveMap );
-
-			}
-
-		}
-
 		
 
 		if ( material.blending !== undefined ) {
