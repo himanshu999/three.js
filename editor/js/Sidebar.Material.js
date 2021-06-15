@@ -480,26 +480,6 @@ function SidebarMaterial( editor ) {
 
 			}
 
-			if ( material.alphaMap !== undefined ) {
-
-				var mapEnabled = materialAlphaMapEnabled.getValue() === true;
-
-				if ( objectHasUvs ) {
-
-					var alphaMap = mapEnabled ? materialAlphaMap.getValue() : null;
-					if ( material.alphaMap !== alphaMap ) {
-
-						editor.execute( new SetMaterialMapCommand( editor, currentObject, 'alphaMap', alphaMap, currentMaterialSlot ) );
-
-					}
-
-				} else {
-
-					if ( mapEnabled ) textureWarning = true;
-
-				}
-
-			}
 
 			if ( material.bumpMap !== undefined ) {
 
