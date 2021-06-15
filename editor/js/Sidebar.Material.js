@@ -1125,17 +1125,7 @@ function SidebarMaterial( editor ) {
 
 		}
 
-		if ( material.alphaMap !== undefined ) {
-
-			materialAlphaMapEnabled.setValue( material.alphaMap !== null );
-
-			if ( material.alphaMap !== null || resetTextureSelectors ) {
-
-				materialAlphaMap.setValue( material.alphaMap );
-
-			}
-
-		}
+		
 
 		if ( material.bumpMap !== undefined ) {
 
