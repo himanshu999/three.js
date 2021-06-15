@@ -414,16 +414,6 @@ function SidebarMaterial( editor ) {
 			}
 
 
-			if ( material.blending !== undefined ) {
-
-				var blending = parseInt( materialBlending.getValue() );
-				if ( material.blending !== blending ) {
-
-					editor.execute( new SetMaterialValueCommand( editor, currentObject, 'blending', blending, currentMaterialSlot ) );
-
-				}
-
-			}
 
 
 
@@ -693,14 +683,6 @@ function SidebarMaterial( editor ) {
 			}
 
 			materialAOScale.setValue( material.aoMapIntensity );
-
-		}
-
-		
-
-		if ( material.blending !== undefined ) {
-
-			materialBlending.setValue( material.blending );
 
 		}
 
