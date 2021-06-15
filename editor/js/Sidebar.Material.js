@@ -373,22 +373,6 @@ function SidebarMaterial( editor ) {
 			}
 
 
-
-
-			if ( material.envMap !== undefined ) {
-
-				var envMapEnabled = materialEnvMapEnabled.getValue() === true;
-
-				var envMap = envMapEnabled ? materialEnvMap.getValue() : null;
-
-				if ( material.envMap !== envMap ) {
-
-					editor.execute( new SetMaterialMapCommand( editor, currentObject, 'envMap', envMap, currentMaterialSlot ) );
-
-				}
-
-			}
-
 			if ( material.reflectivity !== undefined ) {
 
 				var reflectivity = materialReflectivity.getValue();
@@ -685,18 +669,6 @@ function SidebarMaterial( editor ) {
 			if ( material.metalnessMap !== null || resetTextureSelectors ) {
 
 				materialMetalnessMap.setValue( material.metalnessMap );
-
-			}
-
-		}
-
-		if ( material.envMap !== undefined ) {
-
-			materialEnvMapEnabled.setValue( material.envMap !== null );
-
-			if ( material.envMap !== null || resetTextureSelectors ) {
-
-				materialEnvMap.setValue( material.envMap );
 
 			}
 
