@@ -1113,11 +1113,7 @@ function SidebarMaterial( editor ) {
 
 		}
 
-		if ( material.vertexColors !== undefined ) {
-
-			materialVertexColors.setValue( material.vertexColors );
-
-		}
+		
 
 		if ( material.depthPacking !== undefined ) {
 
