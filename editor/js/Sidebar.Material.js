@@ -340,33 +340,6 @@ function SidebarMaterial( editor ) {
 			}
 
 
-			if ( material.bumpMap !== undefined ) {
-
-				var bumpMapEnabled = materialBumpMapEnabled.getValue() === true;
-
-				if ( objectHasUvs ) {
-
-					var bumpMap = bumpMapEnabled ? materialBumpMap.getValue() : null;
-					if ( material.bumpMap !== bumpMap ) {
-
-						editor.execute( new SetMaterialMapCommand( editor, currentObject, 'bumpMap', bumpMap, currentMaterialSlot ) );
-
-					}
-
-					if ( material.bumpScale !== materialBumpScale.getValue() ) {
-
-						editor.execute( new SetMaterialValueCommand( editor, currentObject, 'bumpScale', materialBumpScale.getValue(), currentMaterialSlot ) );
-
-					}
-
-				} else {
-
-					if ( bumpMapEnabled ) textureWarning = true;
-
-				}
-
-			}
-
 			if ( material.normalMap !== undefined ) {
 
 				var normalMapEnabled = materialNormalMapEnabled.getValue() === true;
@@ -676,20 +649,6 @@ function SidebarMaterial( editor ) {
 		}
 
 		
-
-		if ( material.bumpMap !== undefined ) {
-
-			materialBumpMapEnabled.setValue( material.bumpMap !== null );
-
-			if ( material.bumpMap !== null || resetTextureSelectors ) {
-
-				materialBumpMap.setValue( material.bumpMap );
-
-			}
-
-			materialBumpScale.setValue( material.bumpScale );
-
-		}
 
 		if ( material.normalMap !== undefined ) {
 
