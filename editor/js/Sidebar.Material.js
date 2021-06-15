@@ -56,6 +56,23 @@ function SidebarMaterial( editor ) {
 	materialSlotRow.add( materialSlotSelect );
 
 	container.add( materialSlotRow );
+	
+	// uuid
+
+	var materialUUIDRow = new UIRow();
+	var materialUUID = new UIInput().setWidth( '102px' ).setFontSize( '12px' ).setDisabled( true );
+	var materialUUIDRenew = new UIButton( strings.getKey( 'sidebar/material/new' ) ).setMarginLeft( '7px' ).onClick( function () {
+
+		materialUUID.setValue( THREE.MathUtils.generateUUID() );
+		update();
+
+	} );
+
+	materialUUIDRow.add( new UIText( strings.getKey( 'sidebar/material/uuid' ) ).setWidth( '90px' ) );
+	materialUUIDRow.add( materialUUID );
+	materialUUIDRow.add( materialUUIDRenew );
+
+	container.add( materialUUIDRow );
 
 	// name
 
