@@ -426,17 +426,6 @@ function SidebarMaterial( editor ) {
 
 			}
 
-			if ( material.vertexColors !== undefined ) {
-
-				var vertexColors = materialVertexColors.getValue();
-
-				if ( material.vertexColors !== vertexColors ) {
-
-					editor.execute( new SetMaterialValueCommand( editor, currentObject, 'vertexColors', vertexColors, currentMaterialSlot ) );
-
-				}
-
-			}
 
 			if ( material.depthPacking !== undefined ) {
 
