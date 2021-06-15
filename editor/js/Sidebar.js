@@ -16,7 +16,7 @@ function Sidebar( editor ) {
 	container.setId( 'sidebar' );
 
 	var scene = new UISpan().add(
-		new SidebarScene( editor ),
+		/*new SidebarScene( editor ),*/
 		new SidebarProperties( editor ),
 		/*new SidebarAnimation( editor ),
 		new SidebarScript( editor )*/
