@@ -461,8 +461,6 @@ function SidebarMaterial( editor ) {
 			'roughness': materialRoughnessRow,
 			'metalness': materialMetalnessRow,
 			'emissive': materialEmissiveRow,
-			// 'sheen': materialSheenRow,
-			'transmission': materialTransmissionRow,
 			'specular': materialSpecularRow,
 			'shininess': materialShininessRow,
 			'clearcoat': materialClearcoatRow,
