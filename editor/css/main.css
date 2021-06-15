@@ -269,10 +269,12 @@ input, textarea {
 }
 
 input.Number {
-	color: #08f!important;
-	font-size: 12px;
-	border: 0px;
-	padding: 2px;
+	color: #0a0a0ab3!important;
+    	font-size: 0.8rem;
+    	border: 0px;
+    	padding: 2px;
+    	font-weight: bold;
+}
 }
 
 select {
@@ -409,13 +411,14 @@ select {
 	right: 0;
 	top: 32px;
 	bottom: 0;
-	width: 300px;
-	background: #eee;
+	width: 320px;
+	background: #128f96;
 	overflow: auto;
 }
 
 	#sidebar .Panel {
-		color: #888;
+		color: #fff;
+		font-size:1rem;
 		padding: 10px;
 		border-top: 1px solid #ccc;
 	}
@@ -431,6 +434,8 @@ select {
 
 	#sidebar canvas {
 		vertical-align: middle;
+		border: 1px solid rgb(220 220 220) !important;
+    		border-radius: 3px;
 	}
 
 #tabs {
@@ -585,9 +590,10 @@ select {
 		}
 
 	input, textarea {
-		background-color: #222;
+		background-color: #f3f3f3;
 		border: 1px solid transparent;
 		color: #888;
+		border-radius:30px;
 	}
 
 	select {
