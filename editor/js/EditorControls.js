@@ -39,8 +39,8 @@ function EditorControls( object, domElement ) {
 
 		if ( box.isEmpty() === false ) {
 
-			/*box.getCenter( center );
-			distance = box.getBoundingSphere( sphere ).radius;*/
+			box.getCenter( center );
+			distance = box.getBoundingSphere( sphere ).radius;
 
 		} else {
 
@@ -51,7 +51,6 @@ function EditorControls( object, domElement ) {
 
 		}
 		
-		console.log('focused');
 
 		delta.set( 0, 0, 1 );
 		delta.applyQuaternion( object.quaternion );
