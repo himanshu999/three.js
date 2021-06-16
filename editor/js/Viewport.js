@@ -363,7 +363,7 @@ function Viewport( editor ) {
 		renderer = newRenderer;
 
 		renderer.setAnimationLoop( animate );
-		renderer.setClearColor( 0xaaaaaa );
+		renderer.setClearColor( 0xeee );
 
 		if ( window.matchMedia ) {
 
