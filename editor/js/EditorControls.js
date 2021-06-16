@@ -50,6 +50,8 @@ function EditorControls( object, domElement ) {
 			distance = 0.1;
 
 		}
+		
+		console.log('focused');
 
 		delta.set( 0, 0, 1 );
 		delta.applyQuaternion( object.quaternion );
