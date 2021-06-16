@@ -557,13 +557,13 @@ Editor.prototype = {
 		this.selected.material.copy(selectionMaterial);
 		this.selected.material.needsUpdate = true;
 		
-		setTimeout(() => {
+		//setTimeout(() => {
 			console.log('called');
 			this.selected.material.copy(originalMaterial);
 			//this.selected.material.needsUpdate = true;
 			this.config.setKey( 'selected', uuid );
 			this.signals.objectSelected.dispatch( object );
-		}, 3000); 
+		//}, 3000); 
 		
 
 		
