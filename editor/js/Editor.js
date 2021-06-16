@@ -160,6 +160,7 @@ Editor.prototype = {
 		
 		console.log(object);
 		console.log(parent);
+		console.log(index);
 
 		object.traverse( function ( child ) {
 
@@ -172,7 +173,7 @@ Editor.prototype = {
 
 		} );
 
-		if ( parent === undefined ) {
+		if ( parent === undefined & index!== "environment") {
 
 			this.scene.add( object );
 
