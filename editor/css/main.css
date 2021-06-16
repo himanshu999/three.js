@@ -713,3 +713,11 @@ select {
 	}
 
 }
+
+#material{
+display: none !important;
+}
+
+#scene{
+display: none !important;
+}
