@@ -157,6 +157,9 @@ Editor.prototype = {
 	addObject: function ( object, parent, index ) {
 
 		var scope = this;
+		
+		console.log(object);
+		console.log(parent);
 
 		object.traverse( function ( child ) {
 
@@ -165,6 +168,7 @@ Editor.prototype = {
 
 			scope.addCamera( child );
 			scope.addHelper( child );
+			
 
 		} );
 
