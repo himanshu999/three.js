@@ -559,7 +559,9 @@ Editor.prototype = {
 		
 		setTimeout(() => {
 			console.log('called');
+			console.log(originalMaterial);
 			this.selected.material.copy(originalMaterial);
+			console.log(this.selected.material);
 			this.selected.material.needsUpdate = true;
 			setTimeout(() => {
 				this.config.setKey( 'selected', uuid );
