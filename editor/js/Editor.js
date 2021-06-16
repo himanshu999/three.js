@@ -550,10 +550,19 @@ Editor.prototype = {
 
 		this.selected = object;
 		
-		this.selected.material.color.set(255, 255, 255);
+		const selectionMaterial = new THREE.MeshStandardMaterial({color: 0x0000ff, metalness: 0, roughness: 1});
+		const originalMaterial = this.selected.material.clone();
+		this.selected.material.copy(selectionMaterial);
+		this.selected.material.needsUpdate = true;
+		
+		setInterval(() => {
+			console.log('now called');
+			this.config.setKey( 'selected', uuid );
+			this.signals.objectSelected.dispatch( object );
+		}, 5000);
+		
 
-		this.config.setKey( 'selected', uuid );
-		this.signals.objectSelected.dispatch( object );
+		
 
 	},
 
