@@ -550,6 +550,8 @@ Editor.prototype = {
 
 		this.selected = object;
 		
+		console.log(this.selected);
+		
 		const selectionMaterial = new THREE.MeshStandardMaterial({color: 0x0000ff, metalness: 0, roughness: 1});
 		const originalMaterial = this.selected.material.clone();
 		this.selected.material.copy(selectionMaterial);
