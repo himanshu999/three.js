@@ -58,11 +58,11 @@ function Viewport( editor ) {
 
 	var box = new THREE.Box3();
 
-	var selectionBox = new THREE.BoxHelper();
+	/*var selectionBox = new THREE.BoxHelper();
 	selectionBox.material.depthTest = false;
 	selectionBox.material.transparent = true;
 	selectionBox.visible = false;
-	sceneHelpers.add( selectionBox );
+	sceneHelpers.add( selectionBox ); */
 
 	var objectPositionOnDown = null;
 	var objectRotationOnDown = null;
@@ -75,7 +75,7 @@ function Viewport( editor ) {
 
 		if ( object !== undefined ) {
 
-			selectionBox.setFromObject( object );
+			//selectionBox.setFromObject( object );
 
 			var helper = editor.helpers[ object.id ];
 
@@ -386,7 +386,7 @@ function Viewport( editor ) {
 
 	signals.objectSelected.add( function ( object ) {
 
-		selectionBox.visible = false;
+		//selectionBox.visible = false;
 		transformControls.detach();
 
 		if ( object !== null && object !== scene && object !== camera ) {
@@ -395,8 +395,8 @@ function Viewport( editor ) {
 
 			if ( box.isEmpty() === false ) {
 
-				selectionBox.setFromObject( object );
-				selectionBox.visible = true;
+				//selectionBox.setFromObject( object );
+				//selectionBox.visible = true;
 
 			}
 
@@ -418,7 +418,7 @@ function Viewport( editor ) {
 
 		if ( object !== undefined ) {
 
-			selectionBox.setFromObject( object );
+			//selectionBox.setFromObject( object );
 
 		}
 
@@ -440,7 +440,7 @@ function Viewport( editor ) {
 
 		if ( editor.selected === object ) {
 
-			selectionBox.setFromObject( object );
+			//selectionBox.setFromObject( object );
 
 		}
 
