@@ -35,12 +35,12 @@ function EditorControls( object, domElement ) {
 
 		var distance;
 
-		box.setFromObject( target );
+		//box.setFromObject( target );
 
 		if ( box.isEmpty() === false ) {
 
-			box.getCenter( center );
-			distance = box.getBoundingSphere( sphere ).radius;
+			/*box.getCenter( center );
+			distance = box.getBoundingSphere( sphere ).radius;*/
 
 		} else {
 
