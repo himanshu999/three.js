@@ -45,13 +45,8 @@ function Viewport( editor ) {
 
 	var grid = new THREE.Group();
 
-	var grid1 = new THREE.GridHelper( 30, 30, 0x888888 );
-	grid1.material.color.setHex( 0x888888 );
-	grid1.material.vertexColors = false;
-	grid.add( grid1 );
-
 	var grid2 = new THREE.GridHelper( 30, 6, 0x222222 );
-	grid2.material.color.setHex( 0x222222 );
+	grid2.material.color.setHex( 0xaaaaaa );
 	grid2.material.depthFunc = THREE.AlwaysDepth;
 	grid2.material.vertexColors = false;
 	grid.add( grid2 );
@@ -363,7 +358,7 @@ function Viewport( editor ) {
 		renderer = newRenderer;
 
 		renderer.setAnimationLoop( animate );
-		renderer.setClearColor( 0xeeeeee );
+		renderer.setClearColor( 0xeaeaea );
 
 		renderer.setPixelRatio( window.devicePixelRatio );
 		renderer.setSize( container.dom.offsetWidth, container.dom.offsetHeight );
