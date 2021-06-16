@@ -32,7 +32,7 @@ function Sidebar( editor ) {
 
 	return container; */
 	
-	return new UISpan().add( new SidebarProperties( editor ));
+	return scene;
 
 }
 
