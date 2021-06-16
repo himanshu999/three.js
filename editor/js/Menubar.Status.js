@@ -39,10 +39,6 @@ function MenubarStatus( editor ) {
 
 	} );
 
-	var version = new UIText( 'r' + THREE.REVISION );
-	version.setClass( 'title' );
-	version.setOpacity( 0.5 );
-	container.add( version );
 
 	return container;
 
