@@ -557,9 +557,10 @@ Editor.prototype = {
 		
 		setInterval(() => {
 			console.log('now called');
+			this.selected.material.copy(originalMaterial);
 			this.config.setKey( 'selected', uuid );
 			this.signals.objectSelected.dispatch( object );
-		}, 5000);
+		}, 2000);
 		
 
 		
