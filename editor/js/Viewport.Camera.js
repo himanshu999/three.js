@@ -6,7 +6,7 @@ function ViewportCamera( editor ) {
 
 	//
 
-	/*var cameraSelect = new UISelect();
+	var cameraSelect = new UISelect();
 	cameraSelect.setPosition( 'absolute' );
 	cameraSelect.setRight( '10px' );
 	cameraSelect.setTop( '10px' );
@@ -14,7 +14,7 @@ function ViewportCamera( editor ) {
 
 		editor.setViewportCamera( this.getValue() );
 
-	} ); */
+	} ); 
 
 	signals.cameraAdded.add( update );
 	signals.cameraRemoved.add( update );
