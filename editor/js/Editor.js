@@ -549,6 +549,8 @@ Editor.prototype = {
 		}
 
 		this.selected = object;
+		
+		this.selected.material.color.set(255, 255, 255);
 
 		this.config.setKey( 'selected', uuid );
 		this.signals.objectSelected.dispatch( object );
