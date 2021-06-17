@@ -257,7 +257,7 @@
 
 				if ( /*confirm( 'Any unsaved data will be lost. Are you sure?' )*/true ) {
 
-					var loader = new THREE.FileLoader();
+					//var loader = new THREE.FileLoader();
 					loader.crossOrigin = '';
 					loader.load( file, function ( text ) {
 
@@ -277,7 +277,7 @@
 			if(editor.scene.children.length == 0){
 					var loader = new THREE.FileLoader();
 					loader.crossOrigin = '';
-					loader.load( file, function ( text ) {
+					loader.load( 'initial.json', function ( text ) {
 
 						//editor.clear();
 						//editor.fromJSON( JSON.parse( text ) );
