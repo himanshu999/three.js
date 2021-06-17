@@ -772,7 +772,7 @@ function Viewport( editor ) {
 
 		}
 		
-		selectionMaterial.material.uniforms.time.value = time * 0.005;
+		selectionMaterial.uniforms.time.value = time * 0.005;
 
 
 		endTime = performance.now();
