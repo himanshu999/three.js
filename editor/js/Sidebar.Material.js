@@ -531,19 +531,19 @@ function SidebarMaterial( editor ) {
 
 		if ( currentObject.isMesh ) {
 
-			materialClass.setOptions( meshMaterialOptions );
+			//materialClass.setOptions( meshMaterialOptions );
 
 		} else if ( currentObject.isSprite ) {
 
-			materialClass.setOptions( spriteMaterialOptions );
+			//materialClass.setOptions( spriteMaterialOptions );
 
 		} else if ( currentObject.isPoints ) {
 
-			materialClass.setOptions( pointsMaterialOptions );
+			//materialClass.setOptions( pointsMaterialOptions );
 
 		} else if ( currentObject.isLine ) {
 
-			materialClass.setOptions( lineMaterialOptions );
+			//materialClass.setOptions( lineMaterialOptions );
 
 		}
 
