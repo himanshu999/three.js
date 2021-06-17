@@ -76,7 +76,7 @@ function Viewport( editor ) {
 					vertexShader: document.getElementById( 'selectionVertexShader' ).textContent,
 					fragmentShader: document.getElementById( 'selectionFragmentShader' ).textContent,
 					side: THREE.DoubleSide,
-					transparent: true
+					transparent: false
 
 				} );
 
@@ -217,7 +217,7 @@ function Viewport( editor ) {
 				} else {
 					
 					const originalMaterial = object.material.clone();
-					object.material.copy(selectionMaterial);
+					object.material = selectionMaterial;
 					
 					setTimeout(() => {
 						object.material.copy(originalMaterial);
