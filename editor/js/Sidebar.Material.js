@@ -59,7 +59,7 @@ function SidebarMaterial( editor ) {
 	
 	// type
 
-	var materialClassRow = new UIRow();
+	/*var materialClassRow = new UIRow();
 	var materialClass = new UISelect().setWidth( '150px' ).setFontSize( '12px' ).onChange( update );
 
 	materialClassRow.add( new UIText( strings.getKey( 'sidebar/material/type' ) ).setWidth( '90px' ) );
@@ -76,13 +76,13 @@ function SidebarMaterial( editor ) {
 		materialUUID.setValue( THREE.MathUtils.generateUUID() );
 		update();
 
-	} );
+	} ); 
 
 	materialUUIDRow.add( new UIText( strings.getKey( 'sidebar/material/uuid' ) ).setWidth( '90px' ) );
 	materialUUIDRow.add( materialUUID );
 	materialUUIDRow.add( materialUUIDRenew );
 
-	container.add( materialUUIDRow );
+	container.add( materialUUIDRow );*/
 
 	// name
 
@@ -236,7 +236,7 @@ function SidebarMaterial( editor ) {
 
 		if ( material ) {
 
-			if ( material.uuid !== undefined && material.uuid !== materialUUID.getValue() ) {
+			/*if ( material.uuid !== undefined && material.uuid !== materialUUID.getValue() ) {
 
 				editor.execute( new SetMaterialValueCommand( editor, currentObject, 'uuid', materialUUID.getValue(), currentMaterialSlot ) );
 
@@ -272,7 +272,7 @@ function SidebarMaterial( editor ) {
 				// copy for the current object explicitly and to
 				// attach the current material to other objects.
 
-			}
+			}*/
 
 			if ( material.color !== undefined && material.color.getHex() !== materialColor.getHexValue() ) {
 
@@ -517,11 +517,11 @@ function SidebarMaterial( editor ) {
 
 		material = editor.getObjectMaterial( currentObject, currentMaterialSlot );
 
-		if ( material.uuid !== undefined ) {
+		/*if ( material.uuid !== undefined ) {
 
 			materialUUID.setValue( material.uuid );
 
-		}
+		}*/
 
 		if ( material.name !== undefined ) {
 
@@ -547,7 +547,7 @@ function SidebarMaterial( editor ) {
 
 		}
 
-		materialClass.setValue( material.type );
+		//materialClass.setValue( material.type );
 
 
 		if ( material.color !== undefined ) {
