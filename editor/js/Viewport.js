@@ -67,6 +67,18 @@ function Viewport( editor ) {
 	var objectPositionOnDown = null;
 	var objectRotationOnDown = null;
 	var objectScaleOnDown = null;
+	
+	const selectionMaterial = new THREE.RawShaderMaterial( {
+
+					uniforms: {
+						time: { value: 1.0 }
+					},
+					vertexShader: document.getElementById( 'selectionVertexShader' ).textContent,
+					fragmentShader: document.getElementById( 'selectionFragmentShader' ).textContent,
+					side: THREE.DoubleSide,
+					transparent: true
+
+				} );
 
 	var transformControls = new TransformControls( camera, container.dom );
 	transformControls.addEventListener( 'change', function () {
@@ -205,7 +217,7 @@ function Viewport( editor ) {
 				} else {
 					
 					const originalMaterial = object.material.clone();
-					object.material.copy(new THREE.MeshStandardMaterial({color:0xff0000}));
+					object.material.copy(selectionMaterial);
 					
 					setTimeout(() => {
 						object.material.copy(originalMaterial);
