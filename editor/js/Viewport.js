@@ -219,10 +219,10 @@ function Viewport( editor ) {
 
 				} else {
 					
-					selected = object;
-					
 					const originalMaterial = object.material.clone();
 					object.material = selectionMaterial;
+					
+					selected = object;
 					
 					setTimeout(() => {
 						object.material = originalMaterial.clone();
@@ -778,12 +778,12 @@ function Viewport( editor ) {
 
 		}
 		
-		if(selected){
+		if(selected !== null){
 			selected.material.uniforms.time.value = startTime * 0.005;
 			needsUpdate = true;
 		}
 		
-		//editor.selected.uniforms.time.value = startTime * 0.005;
+		//selected.material.uniforms.time.value = startTime * 0.005;
 		//needsUpdate = true;
 
 
