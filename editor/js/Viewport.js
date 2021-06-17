@@ -210,6 +210,7 @@ function Viewport( editor ) {
 					setTimeout(() => {
 						object.material.copy(originalMaterial);
 						object.material.needsUpdate = true;
+						editor.signals.materialChanged.dispatch();
 						editor.select( object );
 					}, 1000);
 					
