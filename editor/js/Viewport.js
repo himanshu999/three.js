@@ -773,6 +773,7 @@ function Viewport( editor ) {
 		}
 		
 		selectionMaterial.uniforms.time.value = startTime * 0.005;
+		selectionMaterial.needsUpdate = true;
 
 
 		endTime = performance.now();
