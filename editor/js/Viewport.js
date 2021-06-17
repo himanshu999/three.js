@@ -217,14 +217,14 @@ function Viewport( editor ) {
 				} else {
 					
 					const originalMaterial = object.material.clone();
-					object.material = selectionMaterial;
+					object.material = selectionMaterial.clone();
 					
 					setTimeout(() => {
-						object.material.copy(originalMaterial);
+						object.material = originalMaterial.clone();
 						object.material.needsUpdate = true;
 						editor.signals.materialChanged.dispatch();
 						editor.select( object );
-					}, 1000);
+					}, 2000);
 					
 
 				}
