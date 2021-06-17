@@ -37,7 +37,7 @@ function Viewport( editor ) {
 	var camera = editor.camera;
 	var scene = editor.scene;
 	var sceneHelpers = editor.sceneHelpers;
-	var showSceneHelpers = true;
+	var showSceneHelpers = false;
 
 	var objects = [];
 
