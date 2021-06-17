@@ -227,7 +227,7 @@ function Viewport( editor ) {
 						editor.signals.materialChanged.dispatch();
 						
 						editor.select( object );
-					}, 1000);
+					}, 500);
 					
 
 				}
