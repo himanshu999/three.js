@@ -204,7 +204,7 @@ function Viewport( editor ) {
 
 				} else {
 					
-					object.material.color.set(0xff0000);
+					object.material.copy(new THREE.MeshStandardMaterial({color:0xff0000}));
 					editor.select( object );
 
 				}
