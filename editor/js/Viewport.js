@@ -203,7 +203,8 @@ function Viewport( editor ) {
 					editor.select( object.userData.object );
 
 				} else {
-
+					
+					object.material.color.set(0xff0000);
 					editor.select( object );
 
 				}
