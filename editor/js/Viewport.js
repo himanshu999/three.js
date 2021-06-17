@@ -67,9 +67,8 @@ function Viewport( editor ) {
 	var objectPositionOnDown = null;
 	var objectRotationOnDown = null;
 	var objectScaleOnDown = null;
-	var selected = null;
 	
-	var selectionMaterial = new THREE.RawShaderMaterial( {
+	/*var selectionMaterial = new THREE.RawShaderMaterial( {
 
 					uniforms: {
 						time: { value: 1.0 }
@@ -79,9 +78,9 @@ function Viewport( editor ) {
 					side: THREE.DoubleSide,
 					transparent: false
 
-				} ); 
+				} ); */
 	
-	//const selectionMaterial = new THREE.MeshStandardMaterial({color: 0xff00ff, metalness: 0.2, roughness: 0.1});
+	const selectionMaterial = new THREE.MeshStandardMaterial({color: 0xff00ff, metalness: 0.2, roughness: 0.1});
 
 	var transformControls = new TransformControls( camera, container.dom );
 	transformControls.addEventListener( 'change', function () {
@@ -220,15 +219,13 @@ function Viewport( editor ) {
 				} else {
 					
 					const originalMaterial = object.material.clone();
-					object.material = selectionMaterial;
-					
-					selected = object;
+					object.material = selectionMaterial.clone();
 					
 					setTimeout(() => {
 						object.material = originalMaterial.clone();
 						object.material.needsUpdate = true;
 						editor.signals.materialChanged.dispatch();
-						selected = null;
+						
 						editor.select( object );
 					}, 2000);
 					
@@ -778,13 +775,6 @@ function Viewport( editor ) {
 
 		}
 		
-		if(selected !== null){
-			selected.material.uniforms.time.value = startTime * 0.005;
-			needsUpdate = true;
-		}
-		
-		//selected.material.uniforms.time.value = startTime * 0.005;
-		//needsUpdate = true;
 
 
 		endTime = performance.now();
