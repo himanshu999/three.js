@@ -6,7 +6,7 @@ function Config() {
 		'language': 'en',
 		'exportPrecision': 6,
 
-		'autosave': true,
+		'autosave': false,
 
 		'project/title': '',
 		'project/editable': false,
