@@ -105,6 +105,8 @@
 			import { Menubar } from './js/Menubar.js';
 			import { Resizer } from './js/Resizer.js';
 			
+			import { AddObjectCommand } from './js/commands/AddObjectCommand.js';
+			
 
 			window.URL = window.URL || window.webkitURL;
 			window.BlobBuilder = window.BlobBuilder || window.WebKitBlobBuilder || window.MozBlobBuilder;
@@ -275,16 +277,23 @@
 			
 			
 			if(editor.scene.children.length == 0){
-					var loader = new THREE.FileLoader();
-					loader.crossOrigin = '';
-					loader.load( 'initial.json', function ( text ) {
+				
+				let loader_o = new THREE.ObjectLoader();
+				//loader_o.setResourcePath( scope.texturePath );
 
-						//editor.clear();
-						//editor.fromJSON( JSON.parse( text ) );
-						
-						editor.loader.handleJSON(JSON.parse(text));
+				loader_o.load( 'initial.json', function ( result ) {
 
-					} );
+					/*if ( result.isScene ) {
+
+						editor.execute( new SetSceneCommand( editor, result ) );
+
+					} else { */
+
+						editor.execute( new AddObjectCommand( editor, result ) );
+
+					//}
+
+				} );
 				
 					
 
