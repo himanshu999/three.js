@@ -276,14 +276,7 @@
 			
 			if(editor.scene.children.length == 0){
 					
-					let loader = new THREE.FileLoader();
-					loader.crossOrigin = '';
-					loader.load( 'initial.json', function ( text ) {
-
-						editor.clear();
-						editor.fromJSON( JSON.parse( text ) );
-
-					} );
+					editor.loader.load('initial.json');
 
 			}
 			
