@@ -80,7 +80,7 @@ function Viewport( editor ) {
 
 				} ); */
 	
-	const selectionMaterial = new THREE.MeshStandardMaterial({color: 0xff00ff, metalness: 0.2, roughness: 0.1});
+	const selectionMaterial = new THREE.MeshStandardMaterial({color: 0x1F25D6, metalness: 0.84, roughness: 0.36});
 
 	var transformControls = new TransformControls( camera, container.dom );
 	transformControls.addEventListener( 'change', function () {
@@ -227,7 +227,7 @@ function Viewport( editor ) {
 						editor.signals.materialChanged.dispatch();
 						
 						editor.select( object );
-					}, 2000);
+					}, 1000);
 					
 
 				}
