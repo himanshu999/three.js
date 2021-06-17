@@ -217,7 +217,7 @@ function Viewport( editor ) {
 				} else {
 					
 					const originalMaterial = object.material.clone();
-					object.material = selectionMaterial.clone();
+					object.material = selectionMaterial;
 					
 					setTimeout(() => {
 						object.material = originalMaterial.clone();
@@ -771,6 +771,9 @@ function Viewport( editor ) {
 			renderer.autoClear = true;
 
 		}
+		
+		selectionMaterial.material.uniforms.time.value = time * 0.005;
+
 
 		endTime = performance.now();
 		editor.signals.sceneRendered.dispatch( endTime - startTime );
