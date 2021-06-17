@@ -84,7 +84,8 @@
 			void main()	{
 
 				vec4 color = vec4(1,1,0,1 );
-				color.r = sin( time ) * 0.5;
+				color.r = sin( time * 10 ) * 0.5;
+				color.g = sin( time * 10 ) * 0.5;
 
 				gl_FragColor = color;
 
