@@ -275,8 +275,18 @@
 			
 			
 			if(editor.scene.children.length == 0){
+					var loader = new THREE.FileLoader();
+					loader.crossOrigin = '';
+					loader.load( file, function ( text ) {
+
+						//editor.clear();
+						//editor.fromJSON( JSON.parse( text ) );
+						
+						editor.loader.handleJSON(JSON.parse(text));
+
+					} );
+				
 					
-					editor.loader.loadFile({name: 'initial.json' });
 
 			}
 			
