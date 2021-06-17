@@ -6,16 +6,21 @@
 	},
 	"geometries": [
 		{
-			"uuid": "FE65B3C7-B5F6-4311-B8A9-AD0A64E56DA9",
-			"type": "DodecahedronGeometry",
+			"uuid": "E46EA794-12F9-4EA0-9D4F-80FB8BBD439E",
+			"type": "SphereGeometry",
 			"radius": 1,
-			"detail": 0
+			"widthSegments": 30,
+			"heightSegments": 30,
+			"phiStart": 0,
+			"phiLength": 6.283185,
+			"thetaStart": 0,
+			"thetaLength": 3.141593
 		}],
 	"materials": [
 		{
-			"uuid": "4A6C4614-76A0-4E63-8EDF-17F0C1DCB0F2",
+			"uuid": "702AD410-0F25-4BAA-BAD8-78C77BCB50D3",
 			"type": "MeshStandardMaterial",
-			"color": 4065545,
+			"color": 14159444,
 			"roughness": 1,
 			"metalness": 0,
 			"emissive": 0,
@@ -35,45 +40,12 @@
 			"stencilZPass": 7680
 		}],
 	"object": {
-		"uuid": "67BF59DD-B7FC-4F47-A61A-3889482D486A",
-		"type": "Scene",
-		"name": "Scene",
+		"uuid": "C798C38D-2D8D-40E5-AF40-BE3F89EA0B9F",
+		"type": "Mesh",
+		"name": "Sphere",
 		"layers": 1,
 		"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1],
-		"children": [
-			{
-				"uuid": "9EEFC774-B73E-4163-894B-47922C3C0FE7",
-				"type": "Mesh",
-				"name": "Dodecahedron",
-				"layers": 1,
-				"matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0.994918,0,1],
-				"geometry": "FE65B3C7-B5F6-4311-B8A9-AD0A64E56DA9",
-				"material": "4A6C4614-76A0-4E63-8EDF-17F0C1DCB0F2"
-			}],
-		"environment": {
-			"metadata": {
-				"version": 4.5,
-				"type": "Texture",
-				"generator": "Texture.toJSON"
-			},
-			"uuid": "E3A89C8A-F607-4EC0-BAE9-FBF769095582",
-			"name": "PMREM.cubeUv",
-			"mapping": 306,
-			"repeat": [1,1],
-			"offset": [0,0],
-			"center": [0,0],
-			"rotation": 0,
-			"wrap": [1001,1001],
-			"format": 1023,
-			"type": 1009,
-			"encoding": 3002,
-			"minFilter": 1003,
-			"magFilter": 1003,
-			"anisotropy": 1,
-			"flipY": true,
-			"premultiplyAlpha": false,
-			"unpackAlignment": 4,
-			"image": "C311E2A2-F201-4355-888C-7EB385EA5CA5"
-		}
+		"geometry": "E46EA794-12F9-4EA0-9D4F-80FB8BBD439E",
+		"material": "702AD410-0F25-4BAA-BAD8-78C77BCB50D3"
 	}
 }
