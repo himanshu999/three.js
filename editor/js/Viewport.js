@@ -204,8 +204,14 @@ function Viewport( editor ) {
 
 				} else {
 					
+					const originalMaterial = object.material.clone();
 					object.material.copy(new THREE.MeshStandardMaterial({color:0xff0000}));
-					editor.select( object );
+					
+					setTimeout(() => {
+						object.material.copy(originalMaterial);
+						editor.select( object );
+					}, 1000);
+					
 
 				}
 
