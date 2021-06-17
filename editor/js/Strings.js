@@ -234,6 +234,7 @@ function Strings( config ) {
 			'sidebar/material/type': 'Type',
 			'sidebar/material/uuid': 'UUID',
 			'sidebar/material/name': 'Name',
+			'sidebar/material/category': 'Category',
 			'sidebar/material/program': 'Program',
 			'sidebar/material/info': 'Info',
 			'sidebar/material/vertex': 'Vert',
