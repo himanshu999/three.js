@@ -2,7 +2,8 @@ import { UIPanel, UISpan } from './libs/ui.js';
 
 import { SidebarScene } from './Sidebar.Scene.js';
 import { SidebarProperties } from './Sidebar.Properties.js';
-
+import { SidebarProject } from './Sidebar.Project.js';
+import { SidebarSettings } from './Sidebar.Settings.js';
 
 function Sidebar( editor ) {
 
@@ -17,6 +18,9 @@ function Sidebar( editor ) {
 		
 		
 	);
+	
+	var project = new SidebarProject( editor );
+	var settings = new SidebarSettings( editor );
 	
 	container.add(scene);
 	
