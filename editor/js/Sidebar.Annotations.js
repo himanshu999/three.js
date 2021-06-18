@@ -19,7 +19,7 @@ function SidebarAnnotations(){
   
   
   var hospotNumberRow = new UIRow();
-  var numberInput = new UIInput().setType('number').onChange(() => {
+  var numberInput = new UIInput().onChange(() => {
   
   });
   hospotNumberRow.add(numberInput);
