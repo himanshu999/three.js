@@ -1,20 +1,21 @@
-import { UITabbedPanel } from './libs/ui.js';
+import { UIPanel } from './libs/ui.js';
 
 import { SidebarMaterial } from './Sidebar.Material.js';
+import {SidebarAnnotations} from './Sidebar.Annotation.js';
 
 function SidebarProperties( editor ) {
 
 	var strings = editor.strings;
 
-	/*var container = new UITabbedPanel();
+	var container = new UIPanel();
 	container.setId( 'properties' );
 
-	container.addTab( 'material', strings.getKey( 'sidebar/properties/material' ), new SidebarMaterial( editor ) );
-	container.select( 'material' );
+	container.add(new SidebarMaterial( editor ));
+	container.add(new SidebarAnnotations(editor));
 
-	return container;*/
+	return container;
 	
-	return new SidebarMaterial( editor );
+	//return new SidebarMaterial( editor );
 
 }
 
