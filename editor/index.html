@@ -278,22 +278,27 @@
 			
 			if(editor.scene.children.length == 0){
 				
-				let loader_o = new THREE.ObjectLoader();
-				//loader_o.setResourcePath( scope.texturePath );
+				/*let loader_o = new THREE.ObjectLoader();
+				//loader_o.setResourcePath( scope.texturePath );*/
 
-				loader_o.load( 'initial.json', function ( result ) {
+				let loader_o = new THREE.GLTFLoader();
+				
+				loader_o.load( 'images/boombox.glb', function ( result ) {
 
-					/*if ( result.isScene ) {
+					if ( result.isScene ) {
 
 						editor.execute( new SetSceneCommand( editor, result ) );
 
-					} else { */
+					} else { 
 
 						editor.execute( new AddObjectCommand( editor, result ) );
 
-					//}
+					}
 
 				} );
+				
+				
+				
 				
 					
 
