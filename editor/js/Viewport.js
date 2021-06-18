@@ -211,7 +211,7 @@ function Viewport( editor ) {
 				
 				if(editor.isSettingHotspot){ 
 					//editor.hotspotPoints.push(intersects[0].point);
-					editor.setHotspot(point);
+					editor.setHotspot(intersects[0].point);
 					render();
 					return;
 				}
