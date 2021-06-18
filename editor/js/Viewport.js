@@ -68,6 +68,8 @@ function Viewport( editor ) {
 	var objectRotationOnDown = null;
 	var objectScaleOnDown = null;
 	
+	var hotspotSprite = new THREE.Sprite( new THREE.SpriteMaterial({color: 0xffff00}));
+	
 	
 	/*var selectionMaterial = new THREE.RawShaderMaterial( {
 
@@ -211,11 +213,16 @@ function Viewport( editor ) {
 				
 				if(editor.isSettingHotspot){ 
 					
-					if(confirm('Are you sure this is the right point ?'))
-					editor.setHotspot(intersects[0].point);
-					
+					hotspotSprite.position.copy(intersects[0].point);
 					render();
-					return;
+					
+					if(confirm('Are you sure this is the right point ?')) {
+						editor.isSettingHotspot = false;
+						editor.setHotspot(intersects[0].point);
+						return;
+					}
+					
+					
 				}
 
 				var object = intersects[ 0 ].object;
