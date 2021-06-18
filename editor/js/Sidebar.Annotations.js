@@ -3,7 +3,7 @@ import * as THREE from '../../build/three.module.js';
 import { UIButton, UICheckbox, UIColor, UIInput, UINumber, UIPanel, UIRow, UISelect, UIText, UITextArea } from './libs/ui.js';
 
 
-function SidebarAnnotations(){
+function SidebarAnnotations(editor){
   
   var container = new UIPanel();
   container.setId('annotations');
