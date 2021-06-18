@@ -70,7 +70,7 @@ function Viewport( editor ) {
 	
 	
 	const hotspotTexture = new THREE.TextureLoader().load( 'images/info-icon.png' );
-	var hotspotMaterial = new THREE.SpriteMaterial({map: map, color: 0xffffff});
+	var hotspotMaterial = new THREE.SpriteMaterial({map: hotspotTexture, color: 0xffffff});
 	
 	
 	/*var selectionMaterial = new THREE.RawShaderMaterial( {
