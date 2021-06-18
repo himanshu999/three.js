@@ -70,7 +70,7 @@ function MenubarFile( editor ) {
 		alert('Product Saved Successfully');
 
 	} );
-	options.add( option );
+	options.add( option ); 
 
 	//
 
