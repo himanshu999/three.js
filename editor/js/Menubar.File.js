@@ -31,25 +31,7 @@ function MenubarFile( editor ) {
 	options.setClass( 'options' );
 	container.add( options );
 
-	// New
-
-	var option = new UIRow();
-	option.setClass( 'option' );
-	option.setTextContent( strings.getKey( 'menubar/file/new' ) );
-	option.onClick( function () {
-
-		if ( confirm( 'Any unsaved data will be lost. Are you sure?' ) ) {
-
-			editor.clear();
-
-		}
-
-	} );
-	options.add( option );
-
-	//
-
-	options.add( new UIHorizontalRule() );
+	
 
 	// Import
 
@@ -77,10 +59,22 @@ function MenubarFile( editor ) {
 
 	} );
 	options.add( option );
+	
+	// Save Product
+
+	var option = new UIRow();
+	option.setClass( 'option' );
+	option.setTextContent( strings.getKey( 'Save Product' ) );
+	option.onClick( function () {
+		
+		alert('Product Saved Successfully');
+
+	} );
+	options.add( option );
 
 	//
 
-	options.add( new UIHorizontalRule() );
+	/*options.add( new UIHorizontalRule() );
 
 	// Export Geometry
 
@@ -397,7 +391,7 @@ function MenubarFile( editor ) {
 
 	//
 
-	options.add( new UIHorizontalRule() );
+	options.add( new UIHorizontalRule() ); 
 
 	// Publish
 
@@ -457,11 +451,11 @@ function MenubarFile( editor ) {
 					''
 				].join( '\n' );
 
-			}
+			} */
 
-			content = content.replace( '\n\t\t\t/* edit button */\n', editButton );
+			//content = content.replace( '\n\t\t\t/* edit button */\n', editButton );
 
-			toZip[ 'index.html' ] = strToU8( content );
+		/*	toZip[ 'index.html' ] = strToU8( content );
 
 		} );
 		loader.load( 'js/libs/app.js', function ( content ) {
@@ -481,7 +475,7 @@ function MenubarFile( editor ) {
 		} );
 
 	} );
-	options.add( option );
+	options.add( option ); */
 
 	//
 
