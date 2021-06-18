@@ -15,7 +15,7 @@ function SidebarAnnotations(editor){
 	  
   var hotspotButtonRow = new UIRow();
   
-  var createHotspotButton = new UIButton('Add Hotspots').onClick(() => {
+  var createHotspotButton = new UIButton('Add Hotspots').addClass('primary').onClick(() => {
           
 	  if(editor.hotspotPoints.length === 0)
 	  alert('Click on the point where you want to place the annotation');
