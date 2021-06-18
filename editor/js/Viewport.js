@@ -214,6 +214,7 @@ function Viewport( editor ) {
 				if(editor.isSettingHotspot){ 
 					
 					hotspotSprite.position.copy(intersects[0].point);
+					editor.scene.add(hotspotSprite);
 					render();
 					
 					if(confirm('Are you sure this is the right point ?')) {
