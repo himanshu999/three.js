@@ -10,8 +10,8 @@ function SidebarAnnotations(){
 	container.setBorderTop( '0' );
 	container.setPaddingTop( '20px' );
   
-  var hospotButtonRow = new UIRow();
-  var createHotspotButton = new UIButton('Add Hostspots').onClick(() => {
+  var hotspotButtonRow = new UIRow();
+  var createHotspotButton = new UIButton('Add Hotspots').onClick(() => {
   
   });
   hotspotButtonRow.add(createHotspotButton);
