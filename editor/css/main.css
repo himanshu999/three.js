@@ -431,7 +431,7 @@ select {
 	right: 0;
 	top: 32px;
 	bottom: 0;
-	width: 320px;
+	width: 370px;
 	background: #128f96;
 	overflow: auto;
 }
@@ -448,7 +448,7 @@ select {
 
 	#sidebar .Row {
 		min-height: 20px;
-		margin-bottom: 10px;
+		margin-bottom: 13px;
 	}
 
 	#sidebar canvas {
@@ -546,7 +546,7 @@ select {
 }
 
 .sidebarh1 {
-    font-size: 1.2rem;
+    font-size: 1.3rem !important;
     font-weight: bold;
     margin-bottom: 16px;
 }
@@ -557,6 +557,10 @@ select {
 
 .hotspot-detail {
     padding-left: 0 !important;
+}
+
+.hotspot-detail .Text {
+    font-weight: 600;
 }
 
 .hotspot-detail .numberInput {
@@ -576,6 +580,12 @@ select {
     border-radius: 4px;
     padding: 12px 8px !important;
     margin: 8px 0 4px 0;
+}
+
+span.Text {
+    /* font-weight: 600; */
+    font-size: 1.1rem;
+    width: 110px !important;
 }
 
 /* */
