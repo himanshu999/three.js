@@ -84,36 +84,7 @@ function SidebarMaterial( editor ) {
 
 	container.add( materialUUIDRow );*/
 	
-	// material Category
-
-	var materialCategoryRow = new UIRow();
-	var materialCategory = new UISelect().setWidth( '150px' ).setFontSize( '12px' ).onChange( function () {
-
-		//editor.execute( new SetMaterialValueCommand( editor, editor.selected, 'name', materialName.getValue(), currentMaterialSlot ) );
-
-	} );
 	
-	materialCategory.setOptions( { 0: 'Leather', 1: 'Fabric', 2: 'Synthetic', 3: 'Rubber' } ).setValue( 0 );
-
-	materialCategoryRow.add( new UIText( strings.getKey( 'sidebar/material/category' ) ).setWidth( '90px' ) );
-	materialCategoryRow.add( materialCategory );
-
-	container.add( materialCategoryRow );
-	
-
-	// name
-
-	var materialNameRow = new UIRow();
-	var materialName = new UIInput().setWidth( '150px' ).setFontSize( '12px' ).onChange( function () {
-
-		//editor.execute( new SetMaterialValueCommand( editor, editor.selected, 'name', materialName.getValue(), currentMaterialSlot ) );
-
-	} );
-
-	materialNameRow.add( new UIText( strings.getKey( 'sidebar/material/name' ) ).setWidth( '90px' ) );
-	materialNameRow.add( materialName );
-
-	container.add( materialNameRow ); 
 
 
 	// color
@@ -473,7 +444,6 @@ function SidebarMaterial( editor ) {
 	function setRowVisibility() {
 
 		var properties = {
-			'name': materialNameRow,
 			'color': materialColorRow,
 			'roughness': materialRoughnessRow,
 			'metalness': materialMetalnessRow,
@@ -540,11 +510,7 @@ function SidebarMaterial( editor ) {
 
 		}*/
 
-		if ( material.name !== undefined ) {
-
-			materialName.setValue( material.name );
-
-		}
+		
 
 		if ( currentObject.isMesh ) {
 
@@ -651,11 +617,7 @@ function SidebarMaterial( editor ) {
 		}
 
 
-		if ( material.reflectivity !== undefined ) {
-
-			materialReflectivity.setValue( material.reflectivity );
-
-		}
+		
 
 
 		if ( material.aoMap !== undefined ) {
