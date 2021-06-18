@@ -68,7 +68,9 @@ function Viewport( editor ) {
 	var objectRotationOnDown = null;
 	var objectScaleOnDown = null;
 	
-	var hotspotSprite = new THREE.Sprite( new THREE.SpriteMaterial({color: 0xffff00}));
+	
+	const map = new THREE.TextureLoader().load( 'images/info-icon.png' );
+	var hotspotSprite = new THREE.Sprite( new THREE.SpriteMaterial({map: map, color: 0xffffff}));
 	
 	
 	/*var selectionMaterial = new THREE.RawShaderMaterial( {
