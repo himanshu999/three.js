@@ -360,8 +360,11 @@ select {
 
 	#menubar .menu {
 		float: left;
-		cursor: pointer;
-		padding-right: 8px;
+    		cursor: pointer;
+    		padding-right: 8px;
+    		padding-left: 0.4rem;
+    		font-size: 1.1rem;
+
 	}
 
 	#menubar .menu.right {
