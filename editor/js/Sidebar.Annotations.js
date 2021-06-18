@@ -16,7 +16,8 @@ function SidebarAnnotations(editor){
   var hotspotButtonRow = new UIRow();
   
   var createHotspotButton = new UIButton('Add Hotspots').onClick(() => {
-  	container.add(createHotspotDetailUI());
+          editor.isSettingHotspot = true;		
+	  container.add(createHotspotDetailUI());
   });
 	
   hotspotButtonRow.add(createHotspotButton);
