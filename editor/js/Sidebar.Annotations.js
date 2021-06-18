@@ -15,12 +15,14 @@ function SidebarAnnotations(){
 	  
   var hotspotButtonRow = new UIRow();
   var createHotspotButton = new UIButton('Add Hotspots').onClick(() => {
-  
+  	container.add(hostspotDetailsContainer);
   });
   hotspotButtonRow.add(createHotspotButton);
   container.add(hotspotButtonRow);
   
-  
+  var hostspotDetailsContainer = new UIPanel().addClass('hotspot-detail');
+  	
+	
   var hospotNumberRow = new UIRow();
   hospotNumberRow.add( new UIText( 'Number' ).setWidth( '90px' ) );
   
@@ -28,7 +30,7 @@ function SidebarAnnotations(){
   
   });
   hospotNumberRow.add(numberInput);
-  container.add(hospotNumberRow);
+  hostspotDetailsContainer.add(hospotNumberRow);
   
   
   var hotspotDescRow = new UIRow();
@@ -36,7 +38,8 @@ function SidebarAnnotations(){
   	
   });
   hotspotDescRow.add(hotspotDescInput);
-  container.add(hotspotDescRow);
+  hostspotDetailsContainer.add(hotspotDescRow);
+	
   
   
   return container;
