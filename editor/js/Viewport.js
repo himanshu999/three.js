@@ -70,7 +70,7 @@ function Viewport( editor ) {
 	
 	
 	const hotspotTexture = new THREE.TextureLoader().load( 'images/info-icon.png' );
-	var hotspotMaterial = new THREE.SpriteMaterial({map: hotspotTexture, color: 0xffffff});
+	var hotspotMaterial = new THREE.SpriteMaterial({map: hotspotTexture, color: 0x222222});
 	
 	
 	/*var selectionMaterial = new THREE.RawShaderMaterial( {
@@ -216,7 +216,7 @@ function Viewport( editor ) {
 				if(editor.isSettingHotspot){ 
 					
 					let hotspot = createHotspot();
-					hotspot.position.copy(intersects[0].point.multiplyScalar(1.3));
+					hotspot.position.copy(intersects[0].point.multiplyScalar(1.2));
 					editor.scene.add(hotspot);
 					render();
 					
@@ -773,7 +773,7 @@ function Viewport( editor ) {
 	function createHotspot(index){
 		
 		var hotspotSprite = new THREE.Sprite(hotspotMaterial);
-		hotspotSprite.scale.set(0.5,0.5,0.5);
+		hotspotSprite.scale.set(0.3,0.3,0.3);
 		return hotspotSprite;
 	}
 
