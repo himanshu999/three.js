@@ -14,31 +14,42 @@ function SidebarAnnotations(){
 	
 	  
   var hotspotButtonRow = new UIRow();
+  
   var createHotspotButton = new UIButton('Add Hotspots').onClick(() => {
-  	container.add(hostspotDetailsContainer);
+  	container.add(createHotspotDetailUI());
   });
+	
   hotspotButtonRow.add(createHotspotButton);
   container.add(hotspotButtonRow);
   
-  var hostspotDetailsContainer = new UIPanel().addClass('hotspot-detail');
+  
+  function createHotspotDetailUI(){
+  
+  	  var hostspotDetailsContainer = new UIPanel().addClass('hotspot-detail');
   	
 	
-  var hospotNumberRow = new UIRow();
-  hospotNumberRow.add( new UIText( 'Number' ).setWidth( '90px' ) );
+	  var hospotNumberRow = new UIRow();
+	  hospotNumberRow.add( new UIText( 'Number' ).setWidth( '90px' ) );
+
+	  var numberInput = new UIInput().onChange(() => {
+
+	  });
+	  hospotNumberRow.add(numberInput);
+	  hostspotDetailsContainer.add(hospotNumberRow);
+
+
+	  var hotspotDescRow = new UIRow();
+	  var hotspotDescInput = new UITextArea().setWidth('100%').setHeight('5rem').setValue('Type a description here...').onChange(() => {
+
+	  });
+	  hotspotDescRow.add(hotspotDescInput);
+	  hostspotDetailsContainer.add(hotspotDescRow);
   
-  var numberInput = new UIInput().onChange(() => {
+	  return hostspotDetailsContainer;
   
-  });
-  hospotNumberRow.add(numberInput);
-  hostspotDetailsContainer.add(hospotNumberRow);
+  } 	
+	
   
-  
-  var hotspotDescRow = new UIRow();
-  var hotspotDescInput = new UITextArea().setWidth('100%').setHeight('5rem').setValue('Type a description here...').onChange(() => {
-  	
-  });
-  hotspotDescRow.add(hotspotDescInput);
-  hostspotDetailsContainer.add(hotspotDescRow);
 	
   
   
