@@ -10,7 +10,7 @@ function Menubar( editor ) {
 	var container = new UIPanel();
 	container.setId( 'menubar' );
 
-	//container.add( new MenubarFile( editor ) );
+	container.add( new MenubarFile( editor ) );
 	container.add( new MenubarEdit( editor ) );
 	//container.add( new MenubarAdd( editor ) );
 	//container.add( new MenubarStatus( editor ) );
