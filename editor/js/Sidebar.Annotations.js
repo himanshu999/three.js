@@ -14,7 +14,7 @@ function SidebarAnnotations(){
   var createHotspotButton = new UIButton('Add Hostspots').onClick(() => {
   
   });
-  hotspotsButtonRow.add(createHotspotButton);
+  hotspotButtonRow.add(createHotspotButton);
   container.add(hotspotButtonRow);
   
   
