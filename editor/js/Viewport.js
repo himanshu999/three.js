@@ -210,8 +210,10 @@ function Viewport( editor ) {
 			if ( intersects.length > 0 ) {
 				
 				if(editor.isSettingHotspot){ 
-					//editor.hotspotPoints.push(intersects[0].point);
+					
+					if(confirm('Are you sure this is the right point ?'))
 					editor.setHotspot(intersects[0].point);
+					
 					render();
 					return;
 				}
