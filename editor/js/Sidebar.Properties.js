@@ -1,7 +1,7 @@
 import { UIPanel } from './libs/ui.js';
 
 import { SidebarMaterial } from './Sidebar.Material.js';
-import {SidebarAnnotations} from './Sidebar.Annotation.js';
+import {SidebarAnnotations} from './Sidebar.Annotations.js';
 
 function SidebarProperties( editor ) {
 
