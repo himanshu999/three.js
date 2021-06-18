@@ -121,6 +121,9 @@ function Editor() {
 	this.viewportCamera = this.camera;
 
 	this.addCamera( this.camera );
+	
+	this.isSettingHotspot = false;
+	this.hotspotPoints = [];
 
 }
 
@@ -646,6 +649,10 @@ Editor.prototype = {
 
 		this.signals.editorCleared.dispatch();
 
+	},
+	
+	setHotspot: function(point){
+		this.hotspotPoints.push(point);
 	},
 
 	//
