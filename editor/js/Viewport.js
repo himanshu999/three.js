@@ -215,7 +215,7 @@ function Viewport( editor ) {
 				
 				if(editor.isSettingHotspot){ 
 					
-					hotspotSprite.position.copy(intersects[0].point);
+					hotspotSprite.position.copy(intersects[0].point.multiplyScalar(1.5));
 					editor.scene.add(hotspotSprite);
 					render();
 					
