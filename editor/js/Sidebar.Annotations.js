@@ -38,7 +38,7 @@ function SidebarAnnotations(editor){
 	  var hospotNumberRow = new UIRow();
 	  hospotNumberRow.add( new UIText( 'Number' ).setWidth( '90px' ) );
 
-	  var numberInput = new UIInput().onChange(() => {
+	  var numberInput = new UIInput().addClass('numberInput').setValue(editor.hotspotPoints.length+1).onChange(() => {
 
 	  });
 	  hospotNumberRow.add(numberInput);
