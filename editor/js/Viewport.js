@@ -69,8 +69,8 @@ function Viewport( editor ) {
 	var objectScaleOnDown = null;
 	
 	
-	const map = new THREE.TextureLoader().load( 'images/info-icon.png' );
-	var hotspotSprite = new THREE.Sprite( new THREE.SpriteMaterial({map: map, color: 0xffffff}));
+	const hotspotTexture = new THREE.TextureLoader().load( 'images/info-icon.png' );
+	var hotspotMaterial = new THREE.SpriteMaterial({map: map, color: 0xffffff});
 	
 	
 	/*var selectionMaterial = new THREE.RawShaderMaterial( {
@@ -215,8 +215,9 @@ function Viewport( editor ) {
 				
 				if(editor.isSettingHotspot){ 
 					
-					hotspotSprite.position.copy(intersects[0].point.multiplyScalar(1.5));
-					editor.scene.add(hotspotSprite);
+					let hotspot = createHotspot();
+					hotspot.position.copy(intersects[0].point.multiplyScalar(1.3));
+					editor.scene.add(hotspot);
 					render();
 					
 					if(confirm('Are you sure this is the right point ?')) {
@@ -767,6 +768,13 @@ function Viewport( editor ) {
 
 		if ( needsUpdate === true ) render();
 
+	}
+	
+	function createHotspot(index){
+		
+		var hotspotSprite = new THREE.Sprite(hotspotMaterial);
+		hotspotSprite.scale.set(0.5,0.5,0.5);
+		return hotspotSprite;
 	}
 
 	//
