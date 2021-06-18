@@ -68,6 +68,7 @@ function Viewport( editor ) {
 	var objectRotationOnDown = null;
 	var objectScaleOnDown = null;
 	
+	
 	/*var selectionMaterial = new THREE.RawShaderMaterial( {
 
 					uniforms: {
@@ -207,6 +208,13 @@ function Viewport( editor ) {
 			var intersects = getIntersects( onUpPosition, objects );
 
 			if ( intersects.length > 0 ) {
+				
+				if(editor.isSettingHotspot){ 
+					//editor.hotspotPoints.push(intersects[0].point);
+					editor.setHotspot(point);
+					render();
+					return;
+				}
 
 				var object = intersects[ 0 ].object;
 
