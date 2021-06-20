@@ -9,6 +9,21 @@ body {
 	overflow: hidden;
 }
 
+.sidebarh1 {
+    font-size: 1.3rem !important;
+    font-weight: bold;
+    margin-bottom: 16px;
+    display: block !important;
+}
+
+
+.sidebarh2 {
+    font-size: 1rem !important;
+    font-weight: bold;
+    margin-bottom: 16px;
+    display: block !important;
+}
+
 hr {
 	border: 0;
 	border-top: 1px solid #ccc;
@@ -548,13 +563,9 @@ select {
 	color: #888;
 }
 
-.sidebarh1 {
-    font-size: 1.3rem !important;
-    font-weight: bold;
-    margin-bottom: 16px;
-}
 
-#annotations {
+
+#materiallist {
     margin-top: 24px !important;
 }
 
@@ -591,6 +602,22 @@ span.Text {
     width: 110px !important;
 }
 
+.mat-thumb {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    text-align: center;
+    display: inline-block;
+    margin: 16px 8px 26px 0;
+    border: 1px solid #828282;
+}
+
+span.mat-name {
+    text-align: center;
+    position: relative;
+    top: 108px;
+    
+}
 /* */
 
 @media all and ( max-width: 600px ) {
