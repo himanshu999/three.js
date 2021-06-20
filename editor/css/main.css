@@ -18,7 +18,7 @@ body {
 
 
 .sidebarh2 {
-    font-size: 1rem !important;
+    font-size: 1.1rem !important;
     font-weight: bold;
     margin-bottom: 16px;
     display: block !important;
@@ -608,7 +608,7 @@ span.Text {
     border-radius: 50%;
     text-align: center;
     display: inline-block;
-    margin: 16px 8px 26px 0;
+    margin: 8px 4px 40px 0;
     border: 1px solid #828282;
 }
 
