@@ -280,12 +280,12 @@
 			
 			if(editor.scene.children.length == 0){
 				
-				/*let loader_o = new THREE.ObjectLoader();
+				let loader_o = new THREE.ObjectLoader();
 				//loader_o.setResourcePath( scope.texturePath );*/
 
-				let loader_o = new GLTFLoader();
+				//let loader_o = new GLTFLoader();
 				
-				loader_o.load( 'images/boombox.glb', function ( result ) {
+				loader_o.load( 'initial.json', function ( result ) {
 
 					if ( result.isScene ) {
 
@@ -293,7 +293,7 @@
 
 					} else { 
 
-						editor.execute( new AddObjectCommand( editor, result.scene ) );
+						editor.execute( new AddObjectCommand( editor, result ) );
 
 					}
 
