@@ -1,4 +1,4 @@
-import { UIButton, UICheckbox, UIColor, UIInput, UINumber, UIPanel, UIRow, UISelect, UIText, UITextArea } from './libs/ui.js';
+import { UIElement, UIButton, UICheckbox, UIColor, UIInput, UINumber, UIPanel, UIRow, UISelect, UIText, UITextArea } from './libs/ui.js';
 
 
 function SidebarMaterialList(editor){
@@ -34,7 +34,7 @@ function SidebarMaterialList(editor){
   
   function createMaterialView(){
   
-    let materialView = `<div class="mat-thumb" style="background:red"><span class="mat-name">Testing</span></div>`;
+    let materialView = new UIElement(`<div class="mat-thumb" style="background:red"><span class="mat-name">Testing</span></div>`);
   	  
   
 	  return materialView;
