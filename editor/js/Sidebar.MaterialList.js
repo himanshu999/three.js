@@ -34,10 +34,13 @@ function SidebarMaterialList(editor){
   
   function createMaterialView(){
   
-    let materialView = new UIElement(`<div class="mat-thumb" style="background:red"><span class="mat-name">Testing</span></div>`);
-  	  
-  
-	  return materialView;
+     
+    var template = document.createElement('template');
+    template.innerHTML = '<div class="mat-thumb" style="background:red"><span class="mat-name">Testing</span></div>';
+    
+    let materialView = new UIElement(template.content.firstChild);  
+	 
+    return materialView;
   
   } 	
 	
