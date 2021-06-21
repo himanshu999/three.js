@@ -231,7 +231,7 @@ function SidebarMaterial( editor ) {
 	
 	var saveMaterialButtonRow = new UIRow();
   
-  	var saveMaterialButton = new UIButton('Save Material').addClass('primary').onClick(() => {
+  	var saveMaterialButton = new UIButton('Save Material').setId('savematbtn').addClass('primary').onClick(() => {
 		
 		 let material = editor.getObjectMaterial( currentObject, currentMaterialSlot );
 		 console.log(material.toJSON());
