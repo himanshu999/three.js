@@ -1,5 +1,6 @@
 import * as THREE from '../../build/three.module.js';
 import { MaterialLoader } from '../../build/three.module.js';
+import { TextureLoader } from '../../build/three.module.js';
 
 import { Config } from './Config.js';
 import { Loader } from './Loader.js';
@@ -100,6 +101,7 @@ function Editor() {
 
 	this.loader = new Loader( this );
 	this.materialLoader = new MaterialLoader();
+	this.textureLoader = new TextureLoader();
 
 	this.camera = _DEFAULT_CAMERA.clone();
 
@@ -375,21 +377,27 @@ Editor.prototype = {
 	},
 	
 	setMaterialFromJSON: function ( matJSON, object ) {
+	
+		
+	
+		let mat = this.materialLoader.parse(matJSON);
 		
 		if(matJSON.textures && matJSON.textures.length > 0){
 		
-			const textures = [];
+			this.textureLoader.load(matJSON.images[0].url,
+
+			function ( texture ) {
+				mat.map = texture;
+			},
+			undefined,
+			function ( err ) {
+				console.error( 'An error happened in loading texture' );
+			}
+		);
 			
-			matJSON.textures.forEach((item) => {
-			textures[item.uuid] = item;
-			});
 			
-			this.materialLoader.setTextures(textures);
-		
 		}
 		
-		
-		let mat = this.materialLoader.parse(matJSON);
 		this.selected.material = mat;
 		this.signals.materialChanged.dispatch();
 
