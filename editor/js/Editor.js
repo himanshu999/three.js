@@ -382,10 +382,10 @@ Editor.prototype = {
 		let mtextures = [];
 		
 		if(matJSON.textures && matJSON.textures.length > 0){
-		
+			
+			var materialLoader = this.materialLoader;
+			
 			this.textureLoader.load(matJSON.images[0].url,
-			var materialLoader = this.materialLoader;			
-
 			function ( texture ) {
 				//mat.map = texture;
 				texture.encoding = 3001;
