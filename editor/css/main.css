@@ -569,6 +569,10 @@ select {
     margin-top: 24px !important;
 }
 
+#materiallist .Row {
+    margin-bottom: 20px;
+}
+
 .hotspot-detail {
     padding-left: 0 !important;
 }
