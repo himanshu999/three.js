@@ -28,7 +28,7 @@ function SidebarMaterialList(editor){
      
     var template = document.createElement('template');
     template.innerHTML = '<div class="mat-thumb" style="background-image:url('+placeholderImage+')"><span class="mat-name">'+matName+'</span></div>';
-    template.content.firstChild.addEventListener( 'click', alert('Hello'), false );
+    template.content.firstChild.addEventListener( 'click', () => alert('Hello'), false );
 	  
     let materialView = new UIElement(template.content.firstChild);  
 	 
