@@ -243,7 +243,7 @@ function SidebarMaterial( editor ) {
 		
 		 matCategorised[currentMaterialCategory].forEach((mat, index) => {
 		 	if(mat.name == currentMaterialName) 
-				mat = {...material.toJSON(), name: currentMaterialName};
+				matCategorised[currentMaterialCategory][index] = {...material.toJSON(), name: currentMaterialName};
 			else if(index == matCategorised[currentMaterialCategory].length - 1)
 				matCategorised[currentMaterialCategory].push({...material.toJSON(), name: currentMaterialName});
 				
