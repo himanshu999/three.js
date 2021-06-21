@@ -104,7 +104,7 @@ function SidebarMaterial( editor ) {
 	
 	
 	var materialNameRow = new UIRow();
-	var materialName = new UIInput().setWidth( '100px' ).onChange( () => {} );
+	var materialName = new UIInput().setWidth( '100px' ).setValue('Material Name').onChange( () => {} );
 
 	materialNameRow.add( new UIText('Name') );
 	materialNameRow.add( materialName );
@@ -241,7 +241,7 @@ function SidebarMaterial( editor ) {
 		
 		 console.log(currentMaterialName);
 		
-		 matCategorised[currentMaterialCategory].forEach((mat, index) => {
+		 matCategorised[currentMaterialCategory].some((mat, index) => {
 		 	if(mat.name === currentMaterialName){
 				matCategorised[currentMaterialCategory][index] = {...material.toJSON(), name: currentMaterialName};
 			}else if(index === matCategorised[currentMaterialCategory].length - 1){
