@@ -376,7 +376,13 @@ Editor.prototype = {
 	
 	setMaterialFromJSON: function ( matJSON, object ) {
 
-		this.materialLoader.setTextures(matJSON.textures);
+		const textures = [];
+		
+		matJSON.textures.forEach((item) => {
+			textures[item.uuid] = item;
+		});
+		
+		this.materialLoader.setTextures(textures);
 		let mat = this.materialLoader.parse(matJSON);
 		this.selected.material = mat;
 		this.signals.materialChanged.dispatch();
