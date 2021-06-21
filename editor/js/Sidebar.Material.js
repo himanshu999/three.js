@@ -242,10 +242,10 @@ function SidebarMaterial( editor ) {
 		 console.log(currentMaterialName);
 		
 		 matCategorised[currentMaterialCategory].forEach((mat, index) => {
-		 	if(mat.name === currentMaterialName) 
-				mat = material.toJSON();
+		 	if(mat.name == currentMaterialName) 
+				mat = {...material.toJSON(), name: currentMaterialName};
 			else if(index == matCategorised[currentMaterialCategory].length - 1)
-				matCategorised[currentMaterialCategory].push(material.toJSON());
+				matCategorised[currentMaterialCategory].push({...material.toJSON(), name: currentMaterialName});
 				
 		 });
 		
