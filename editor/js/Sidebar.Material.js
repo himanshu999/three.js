@@ -89,7 +89,7 @@ function SidebarMaterial( editor ) {
 	container.add( materialUUIDRow );*/
 	
 	var materialCategoryRow = new UIRow();
-	var materialCategory = new UISelect().setWidth( '60px' ).onChange( () => {} );
+	var materialCategory = new UISelect().setWidth( '100px' ).onChange( () => {} );
 	let options = {};
 	var matCategorised  = editor.matCategorised;
 	for(const key in matCategorised){
@@ -104,7 +104,7 @@ function SidebarMaterial( editor ) {
 	
 	
 	var materialNameRow = new UIRow();
-	var materialName = new UIInput().setWidth( '60px' ).onChange( () => {} );
+	var materialName = new UIInput().setWidth( '100px' ).onChange( () => {} );
 
 	materialNameRow.add( new UIText('Name') );
 	materialNameRow.add( materialName );
@@ -242,14 +242,16 @@ function SidebarMaterial( editor ) {
 		 console.log(currentMaterialName);
 		
 		 matCategorised[currentMaterialCategory].forEach((mat, index) => {
-		 	if(mat.name === currentMaterialName) 
+		 	if(mat.name === currentMaterialName){
 				matCategorised[currentMaterialCategory][index] = {...material.toJSON(), name: currentMaterialName};
+			}{	
 			else if(index === matCategorised[currentMaterialCategory].length - 1)
 				matCategorised[currentMaterialCategory].push({...material.toJSON(), name: currentMaterialName});
+			}	
 				
 		 });
 		
-	         //materialCategory.getValue();
+	        
 	         
 		
 		
