@@ -278,8 +278,9 @@ button {
 	}
 
 input, textarea {
-	border: 1px solid transparent;
 	color: #444;
+    	background: #eee;
+    	border-radius: 3px;
 }
 
 input.Number {
@@ -305,6 +306,12 @@ select {
 	}
 
 /* UI */
+
+select.Select {
+    border-radius: 3px;
+    background: #eee;
+    border: none;
+}
 
 #resizer {
 	position: absolute;
