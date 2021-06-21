@@ -86,7 +86,9 @@ function Editor() {
 
 		viewportCameraChanged: new Signal(),
 
-		animationStopped: new Signal()
+		animationStopped: new Signal(),
+		
+		materialListChanged: new Signal()
 
 	};
 
