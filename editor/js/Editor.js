@@ -376,6 +376,7 @@ Editor.prototype = {
 	
 	setMaterialFromJSON: function ( matJSON, object ) {
 
+		this.materialLoader.setTextures(matJSON.textures);
 		let mat = this.materialLoader.parse(matJSON);
 		this.selected.material = mat;
 		this.signals.materialChanged.dispatch();
