@@ -93,7 +93,7 @@ function SidebarMaterial( editor ) {
 	let options = {};
 	var matCategorised  = editor.matCategorised;
 	for(const key in matCategorised){
-	  options.key = key;
+	  options[key] = key;
 	}
 	materialCategory.setOptions(options).setValue(Object.keys(matCategorised)[0]);
 	
