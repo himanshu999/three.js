@@ -244,9 +244,11 @@ function SidebarMaterial( editor ) {
 		 matCategorised[currentMaterialCategory].some((mat, index) => {
 		 	if(mat.name === currentMaterialName){
 				matCategorised[currentMaterialCategory][index] = {...material.toJSON(), name: currentMaterialName};
+				return true;
 			}else if(index === matCategorised[currentMaterialCategory].length - 1){
 				
 				matCategorised[currentMaterialCategory].push({...material.toJSON(), name: currentMaterialName});
+				return true;
 			}	
 				
 		 });
