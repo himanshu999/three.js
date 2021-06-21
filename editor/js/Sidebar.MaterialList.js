@@ -41,7 +41,7 @@ function SidebarMaterialList(editor){
   
 	  //let matCommand = new SetMaterialCommand( editor, editor.selected, editor.matCategorised['Leather'][0], 1 ), 'New Material: Test' );
   	
-	  editor.setMaterialFromJSON(editor.matCategorised['Leather'][0], editor.selected);
+	  editor.setMaterialFromJSON(editor.matCategorised[matCategoryName].find((mat) => mat.name === matName), editor.selected);
   }
 	
 	
