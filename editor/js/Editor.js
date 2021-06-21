@@ -389,6 +389,12 @@ Editor.prototype = {
 				//mat.map = texture;
 				texture.encoding = 3001;
 				mtextures[matJSON.textures[0].uuid] = texture;
+				
+				this.materialLoader.setTextures(mtextures);
+				
+				let mat = this.materialLoader.parse(matJSON);
+				this.selected.material = mat;
+				this.signals.materialChanged.dispatch();
 			},
 			undefined,
 			function ( err ) {
@@ -396,9 +402,9 @@ Editor.prototype = {
 			}
 		);
 			
-		console.log(mtextures);	
+		//console.log(mtextures);	
 		
-		this.materialLoader.setTextures(mtextures);
+		
 			
 		}
 		
