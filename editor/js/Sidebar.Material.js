@@ -90,7 +90,11 @@ function SidebarMaterial( editor ) {
 	
 	var materialCategoryRow = new UIRow();
 	var materialCategory = new UISelect().setWidth( '60px' ).onChange( () => {} );
-	materialCategory.setOptions({ 'Leather': 0, 'Fabric': 1, 'Synthetic': 2 }).setValue(0);
+	let options = {};
+	for(const key in editor.matCategorised){
+	  options.key = key;
+	}
+	materialCategory.setOptions(options).setValue(Object.keys(editor.matCategorised)[0]);
 	
 	materialCategoryRow.add( new UIText('Category') );
 	materialCategoryRow.add( materialCategory );
