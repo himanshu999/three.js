@@ -254,7 +254,7 @@ function SidebarMaterial( editor ) {
 		 });
 		
 	        
-	         
+	         signals.materialListChanged.dispatch();
 		
 		
 	});
