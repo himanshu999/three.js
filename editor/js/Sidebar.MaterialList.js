@@ -37,10 +37,11 @@ function SidebarMaterialList(editor){
   
   }
 	
-  function handleClickOnMatThumb(){
+  function handleClickOnMatThumb(matName, matCategoryName){
   
-	  editor.execute( new SetMaterialCommand( editor, editor.selected, editor.matCategorised['Leather'][0], 1 ), 'New Material: Test' );
-  
+	  //let matCommand = new SetMaterialCommand( editor, editor.selected, editor.matCategorised['Leather'][0], 1 ), 'New Material: Test' );
+  	
+	  editor.setMaterialFromJSON(editor.matCategorised['Leather'][0], editor.selected);
   }
 	
 	
