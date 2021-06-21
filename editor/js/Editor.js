@@ -384,6 +384,7 @@ Editor.prototype = {
 		if(matJSON.textures && matJSON.textures.length > 0){
 			
 			var materialLoader = this.materialLoader;
+			var that = this;
 			
 			this.textureLoader.load(matJSON.images[0].url,
 			function ( texture ) {
@@ -394,8 +395,8 @@ Editor.prototype = {
 				materialLoader.setTextures(mtextures);
 				
 				let mat = materialLoader.parse(matJSON);
-				this.selected.material = mat;
-				this.signals.materialChanged.dispatch();
+				that.selected.material = mat;
+				that.signals.materialChanged.dispatch();
 			},
 			undefined,
 			function ( err ) {
