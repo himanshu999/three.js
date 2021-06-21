@@ -379,7 +379,7 @@ Editor.prototype = {
 	setMaterialFromJSON: function ( matJSON, object ) {
 	
 		
-		let textures = [];
+		let mtextures = [];
 		
 		if(matJSON.textures && matJSON.textures.length > 0){
 		
@@ -395,8 +395,10 @@ Editor.prototype = {
 				console.error( 'An error happened in loading texture' );
 			}
 		);
+			
+		console.log(mtextures);	
 		
-		this.materialLoader.setTextures(textures);
+		this.materialLoader.setTextures(mtextures);
 			
 		}
 		
