@@ -388,6 +388,7 @@ Editor.prototype = {
 
 			function ( texture ) {
 				//mat.map = texture;
+				texture.encoding = 3001;
 				textures[matJSON.textures[0].uuid] = texture;
 			},
 			undefined,
