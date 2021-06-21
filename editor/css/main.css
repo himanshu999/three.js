@@ -9,20 +9,6 @@ body {
 	overflow: hidden;
 }
 
-.sidebarh1 {
-    font-size: 1.3rem !important;
-    font-weight: bold;
-    margin-bottom: 16px;
-    display: block !important;
-}
-
-
-.sidebarh2 {
-    font-size: 1.1rem !important;
-    font-weight: bold;
-    margin-bottom: 8px;
-    display: block !important;
-}
 
 hr {
 	border: 0;
@@ -625,6 +611,22 @@ span.mat-name {
     top: 103px;
     text-transform: capitalize;	
     
+}
+
+
+.sidebarh1 {
+    font-size: 1.3rem !important;
+    font-weight: bold;
+    margin-bottom: 16px;
+    display: block !important;
+}
+
+
+.sidebarh2 {
+    font-size: 1.1rem !important;
+    font-weight: bold;
+    margin-bottom: 8px;
+    display: block !important;
 }
 /* */
 
