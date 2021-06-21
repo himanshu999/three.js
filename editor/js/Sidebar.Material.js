@@ -236,11 +236,16 @@ function SidebarMaterial( editor ) {
 		 let material = editor.getObjectMaterial( currentObject, currentMaterialSlot );
 		 console.log(material.toJSON());
 		
-		 matCategorised[materialCategory.getValue()].forEach((mat, index) => {
-		 	if(mat.name === materialName.getValue()) 
+		 let currentMaterialCategory = materialCategory.getValue();
+		 let currentMaterialName = materialName.getValue();
+		
+		 console.log(currentMaterialName);
+		
+		 matCategorised[currentMaterialCategory].forEach((mat, index) => {
+		 	if(mat.name === currentMaterialName) 
 				mat = material.toJSON().clone();
-			else if(index === (matCategorised.length - 1) && mat.name === !materialName.getValue())
-				matCategorised[materialCategory.getValue()].push(material.toJSON().clone());
+			else if(index === (matCategorised[currentMaterialCategory].length - 1) && mat.name === !currentMaterialName)
+				matCategorised[currentMaterialCategory].push(material.toJSON().clone());
 				
 		 });
 		
