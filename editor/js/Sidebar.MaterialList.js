@@ -1,5 +1,5 @@
 import { UIElement, UIButton, UICheckbox, UIColor, UIInput, UINumber, UIPanel, UIRow, UISelect, UIText, UITextArea } from './libs/ui.js'
-
+import { SetMaterialCommand } from './commands/SetMaterialCommand.js';
 
 function SidebarMaterialList(editor){
 	
@@ -23,18 +23,25 @@ function SidebarMaterialList(editor){
   container.add(materialListRow);*/
   
   
-  function createMaterialView(matName){
+  function createMaterialView(matName, matCategoryName){
  
      
     var template = document.createElement('template');
     template.innerHTML = '<div class="mat-thumb" style="background-image:url('+placeholderImage+')"><span class="mat-name">'+matName+'</span></div>';
-    template.content.firstChild.addEventListener( 'click', () => alert('Hello'), false );
+    
+    template.content.firstChild.addEventListener( 'click', () => handleClickOnMatThumb(matName, matCategoryName), false );
 	  
     let materialView = new UIElement(template.content.firstChild);  
 	 
     return materialView;
   
-  } 	
+  }
+	
+  function handleClickOnMatThumb(){
+  
+	  editor.execute( new SetMaterialCommand( editor, editor.selected, editor.matCategorised['Leather'][0], 1 ), 'New Material: Test' );
+  
+  }
 	
 	
   function createMaterialList(){
@@ -51,7 +58,7 @@ function SidebarMaterialList(editor){
 	  
 	  matCategorised[matCategoryName].forEach((mat, matIndex) => {
 	  	
-		materialListRow.add(createMaterialView(mat['name']));	   
+		materialListRow.add(createMaterialView(mat['name'], matCategoryName));	   
 		  
 	  });
 	  
