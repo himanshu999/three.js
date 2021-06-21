@@ -37,6 +37,8 @@ function SidebarMaterial( editor ) {
 	var currentObject;
 
 	var currentMaterialSlot = 0;
+	
+	var currentMaterialName, currentMaterialCategory;
 
 	var epsilon = 0.01 - Number.EPSILON;
 
@@ -45,7 +47,7 @@ function SidebarMaterial( editor ) {
 	container.setDisplay( 'none' );
 	container.setPaddingTop( '20px' );
 	
-	container.add(new UIText('3D Settings').addClass('sidebarh1').setWidth('100%').setFontSize('1rem'));
+	container.add(new UIText('Material Settings').addClass('sidebarh1').setWidth('100%').setFontSize('1rem'));
 
 	// Current material slot
 
@@ -57,7 +59,7 @@ function SidebarMaterial( editor ) {
 	materialSlotSelect.setOptions( { 0: '' } ).setValue( 0 );
 	materialSlotRow.add( materialSlotSelect );
 
-	container.add( materialSlotRow );
+	container.add( materialSlotRow);
 	
 	// type
 
@@ -85,6 +87,25 @@ function SidebarMaterial( editor ) {
 	materialUUIDRow.add( materialUUIDRenew );
 
 	container.add( materialUUIDRow );*/
+	
+	var materialCategoryRow = new UIRow();
+	var materialCategory = new UISelect().setWidth( '60px' ).onChange( () => {} );
+	materialCategory.setOptions({ 'Leather': 0, 'Fabric': 1, 'Synthetic': 2 }).setValue(0);
+	
+	materialCategoryRow.add( new UIText('Category') );
+	materialCategoryRow.add( materialCategory );
+
+	container.add( materialCategoryRow );
+	
+	
+	var materialNameRow = new UIRow();
+	var materialName = new UIInput().setWidth( '60px' ).onChange( () => {} );
+
+	materialNameRow.add( new UIText('Name') );
+	materialNameRow.add( materialName );
+
+	container.add( materialNameRow );
+	
 	
 	
 
@@ -201,6 +222,22 @@ function SidebarMaterial( editor ) {
 	materialAOMapRow.add( materialAOScale );
 
 	container.add( materialAOMapRow );
+	
+	
+	var saveMaterialButtonRow = new UIRow();
+  
+  	var saveMaterialButton = new UIButton('Save Material').addClass('primary').onClick(() => {
+		
+		 let material = editor.getObjectMaterial( currentObject, currentMaterialSlot );
+		 console.log(material.toJSON());
+		
+		
+	});
+	
+	saveMaterialButtonRow.add(saveMaterialButton);
+	container.add(saveMaterialButtonRow);
+	
+	
 
 	
 	function update() {
