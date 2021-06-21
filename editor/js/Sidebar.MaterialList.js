@@ -23,13 +23,15 @@ function SidebarMaterialList(editor){
   container.add(materialListRow);*/
   
   
-  function createMaterialView(matName, matCategoryName){
+  function createMaterialView(mat, matCategoryName){
+	  
+    let bgImage = mat.images && mat.images.length > 0 ? mat.images[0].url : placeholderImage; 
  
      
     var template = document.createElement('template');
-    template.innerHTML = '<div class="mat-thumb" style="background-image:url('+placeholderImage+')"><span class="mat-name">'+matName+'</span></div>';
+    template.innerHTML = '<div class="mat-thumb" style="background-image:url('+bgImage+')"><span class="mat-name">'+mat['name']+'</span></div>';
     
-    template.content.firstChild.addEventListener( 'click', () => handleClickOnMatThumb(matName, matCategoryName), false );
+    template.content.firstChild.addEventListener( 'click', () => handleClickOnMatThumb(mat['name'], matCategoryName), false );
 	  
     let materialView = new UIElement(template.content.firstChild);  
 	 
@@ -59,7 +61,7 @@ function SidebarMaterialList(editor){
 	  
 	  matCategorised[matCategoryName].forEach((mat, matIndex) => {
 	  	
-		materialListRow.add(createMaterialView(mat['name'], matCategoryName));	   
+		materialListRow.add(createMaterialView(mat, matCategoryName));	   
 		  
 	  });
 	  
