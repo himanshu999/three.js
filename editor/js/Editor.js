@@ -99,7 +99,7 @@ function Editor() {
 	this.strings = new Strings( this.config );
 
 	this.loader = new Loader( this );
-	this.materialLoader = new THREE.MaterialLoader();
+	this.materialLoader = new MaterialLoader();
 
 	this.camera = _DEFAULT_CAMERA.clone();
 
