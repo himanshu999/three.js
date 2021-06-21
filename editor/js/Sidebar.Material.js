@@ -91,10 +91,11 @@ function SidebarMaterial( editor ) {
 	var materialCategoryRow = new UIRow();
 	var materialCategory = new UISelect().setWidth( '60px' ).onChange( () => {} );
 	let options = {};
-	for(const key in editor.matCategorised){
+	var matCategorised  = editor.matCategorised;
+	for(const key in matCategorised){
 	  options.key = key;
 	}
-	materialCategory.setOptions(options).setValue(Object.keys(editor.matCategorised)[0]);
+	materialCategory.setOptions(options).setValue(Object.keys(matCategorised)[0]);
 	
 	materialCategoryRow.add( new UIText('Category') );
 	materialCategoryRow.add( materialCategory );
@@ -234,6 +235,17 @@ function SidebarMaterial( editor ) {
 		
 		 let material = editor.getObjectMaterial( currentObject, currentMaterialSlot );
 		 console.log(material.toJSON());
+		
+		 matCategorised[materialCategory.getValue()].forEach((mat, index) => {
+		 	if(mat.name === materialName.getValue()) 
+				mat = material.toJSON().clone();
+			else if(index === (matCategorised.length - 1) && mat.name === !materialName.getValue())
+				matCategorised[materialCategory.getValue()].push(material.toJSON().clone());
+				
+		 });
+		
+	         //materialCategory.getValue();
+	         
 		
 		
 	});
