@@ -378,6 +378,8 @@ Editor.prototype = {
 
 		const textures = [];
 		
+		console.log(matJSON);
+		
 		matJSON.textures.forEach((item) => {
 			textures[item.uuid] = item;
 		});
