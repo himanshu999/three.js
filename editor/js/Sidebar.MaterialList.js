@@ -13,7 +13,7 @@ function SidebarMaterialList(editor){
   container.setBorderTop( '0' );
   container.setPaddingTop( '4px' );
   
-  container.add(new UIText('Material Library').addClass('sidebarh1').setStyle('width', ['100% !important']));
+  container.add(new UIText('Material Library').setStyle('width', ['100% !important']).addClass('sidebarh1'));
 	
   /*container.add(new UIText('Leather').addClass('sidebarh2'));
   
