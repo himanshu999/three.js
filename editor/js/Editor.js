@@ -378,6 +378,7 @@ Editor.prototype = {
 
 		let mat = this.materialLoader.parse(matJSON);
 		this.selected.material = mat;
+		this.signals.materialChanged.dispatch();
 
 	},
 
