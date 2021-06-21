@@ -380,7 +380,6 @@ Editor.prototype = {
 	
 		
 		let textures = [];
-		let mat = this.materialLoader.parse(matJSON);
 		
 		if(matJSON.textures && matJSON.textures.length > 0){
 		
@@ -401,6 +400,7 @@ Editor.prototype = {
 			
 		}
 		
+		let mat = this.materialLoader.parse(matJSON);
 		this.selected.material = mat;
 		this.signals.materialChanged.dispatch();
 
