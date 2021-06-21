@@ -639,6 +639,11 @@ span.mat-name {
 #properties .sidebarh1{
     width:100% !important;
 }
+
+#savematbtn{
+margin-top:20px;
+border-radius:3px;	
+}
 /* */
 
 @media all and ( max-width: 600px ) {
