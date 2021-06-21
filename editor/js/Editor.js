@@ -376,7 +376,7 @@ Editor.prototype = {
 	
 	setMaterialFromJSON: function ( matJSON, object ) {
 
-		materialLoader.load(matJSON,
+		this.materialLoader.load(matJSON,
 
 		// onLoad callback
 		function ( material ) {
