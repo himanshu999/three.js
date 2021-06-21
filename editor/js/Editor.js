@@ -124,6 +124,9 @@ function Editor() {
 	
 	this.isSettingHotspot = false;
 	this.hotspotPoints = [];
+	
+	//this.matCategories = ['Leather', Fabri'Synthetic']
+	this.matCategorised = {'Leather': [{'name': 'type1'}, {'name': 'type2'}], 'Fabric': [{'name': 'type1'}], 'Synthetic': [{'name': 'type1'}]};
 
 }
 
