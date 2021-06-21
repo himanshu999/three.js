@@ -47,7 +47,7 @@ function SidebarMaterial( editor ) {
 	container.setDisplay( 'none' );
 	container.setPaddingTop( '20px' );
 	
-	container.add(new UIText('Material Settings').addClass('sidebarh1').setWidth('100%').setFontSize('1rem'));
+	container.add(new UIText('Material Settings').addClass('sidebarh1').setWidth('100% !important').setFontSize('1rem'));
 
 	// Current material slot
 
