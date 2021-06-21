@@ -20,7 +20,7 @@ body {
 .sidebarh2 {
     font-size: 1.1rem !important;
     font-weight: bold;
-    margin-bottom: 16px;
+    margin-bottom: 8px;
     display: block !important;
 }
 
@@ -603,19 +603,23 @@ span.Text {
 }
 
 .mat-thumb {
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
     border-radius: 50%;
     text-align: center;
     display: inline-block;
-    margin: 8px 4px 40px 0;
-    border: 1px solid #828282;
+    margin: 8px 12px 40px 0;
+    /* border: 1px solid #52525233; */
+    background-size: cover;
+    background-color: #0000001c;
+    cursor: pointer;
 }
 
 span.mat-name {
     text-align: center;
     position: relative;
-    top: 108px;
+    top: 103px;
+    text-transform: capitalize;	
     
 }
 /* */
