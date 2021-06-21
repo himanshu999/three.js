@@ -127,8 +127,10 @@ function Editor() {
 	this.isSettingHotspot = false;
 	this.hotspotPoints = [];
 	
+	const dummyMatJSON = { name:'type1', "metadata": { "version": 4.5, "type": "Material", "generator": "Material.toJSON" }, "uuid": "702AD410-0F25-4BAA-BAD8-78C77BCB50D3", "type": "MeshStandardMaterial", "color": 3408917, "roughness": 1, "metalness": 0, "emissive": 0, "envMapIntensity": 1, "refractionRatio": 0.98, "depthFunc": 3, "depthTest": true, "depthWrite": true, "colorWrite": true, "stencilWrite": false, "stencilWriteMask": 255, "stencilFunc": 519, "stencilRef": 0, "stencilFuncMask": 255, "stencilFail": 7680, "stencilZFail": 7680, "stencilZPass": 7680 };
+	
 	//this.matCategories = ['Leather', Fabri'Synthetic']
-	this.matCategorised = {'Leather': [{'name': 'type1'}, {'name': 'type2'}], 'Fabric': [{'name': 'type1'}], 'Synthetic': [{'name': 'type1'}]};
+	this.matCategorised = {'Leather': [dummyMatJSON, {...dummyMatJSON, 'name': 'type2'}], 'Fabric': [dummyMatJSON], 'Synthetic': [dummyMatJSON]};
 
 }
 
