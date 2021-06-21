@@ -628,6 +628,10 @@ span.mat-name {
     margin-bottom: 8px;
     display: block !important;
 }
+
+#properties .sidebarh1{
+    width:100% !important;
+}
 /* */
 
 @media all and ( max-width: 600px ) {
