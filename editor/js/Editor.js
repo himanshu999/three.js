@@ -376,23 +376,8 @@ Editor.prototype = {
 	
 	setMaterialFromJSON: function ( matJSON, object ) {
 
-		this.materialLoader.load(matJSON,
-
-		// onLoad callback
-		function ( material ) {
-			object.material = material;
-		},
-
-		// onProgress callback
-		function ( xhr ) {
-			console.log( (xhr.loaded / xhr.total * 100) + '% loaded' );
-		},
-
-		// onError callback
-		function ( err ) {
-			console.log( 'An error happened' );
-		});
-		
+		let mat = this.materialLoader.parse(matJSON);
+		this.selected.material = mat;
 
 	},
 
