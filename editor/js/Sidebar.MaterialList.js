@@ -13,8 +13,7 @@ function SidebarMaterialList(editor){
   container.setId('materiallist');
   container.setBorderTop( '0' );
   container.setPaddingTop( '4px' );
-  
-  container.add(new UIText('Material Library').setStyle('width', ['100% !important']).addClass('sidebarh1'));
+ 
 	
   /*container.add(new UIText('Leather').addClass('sidebarh2'));
   
@@ -25,7 +24,7 @@ function SidebarMaterialList(editor){
   
   
   function createMaterialView(matName){
-  
+ 
      
     var template = document.createElement('template');
     template.innerHTML = '<div class="mat-thumb" style="background-image:url('+placeholderImage+')"><span class="mat-name">'+matName+'</span></div>';
@@ -38,6 +37,10 @@ function SidebarMaterialList(editor){
 	
 	
   function createMaterialList(){
+	  
+	  container.clear();
+	  
+	  container.add(new UIText('Material Library').setStyle('width', ['100% !important']).addClass('sidebarh1'));
   	
 	  for(const matCategoryName in matCategorised){
   	
