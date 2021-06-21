@@ -44,7 +44,7 @@ function SidebarMaterialList(editor){
 	  
 	  matCategorised[matCategoryName].forEach((mat, matIndex) => {
 	  	
-		materialListRow.add(createMaterialView(mat['name']));	  
+		materialListRow.add(createMaterialView(mat['name']));	   
 		  
 	  });
 	  
