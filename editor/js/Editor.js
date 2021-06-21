@@ -408,11 +408,13 @@ Editor.prototype = {
 		
 		
 			
+		}else{
+		  let mat = this.materialLoader.parse(matJSON);
+		  this.selected.material = mat;
+		  this.signals.materialChanged.dispatch();
 		}
 		
-		let mat = this.materialLoader.parse(matJSON);
-		this.selected.material = mat;
-		this.signals.materialChanged.dispatch();
+		
 
 	},
 
