@@ -1,4 +1,5 @@
 import * as THREE from '../../build/three.module.js';
+import { MaterialLoader } from '../../build/three.module.js';
 
 import { Config } from './Config.js';
 import { Loader } from './Loader.js';
@@ -98,6 +99,7 @@ function Editor() {
 	this.strings = new Strings( this.config );
 
 	this.loader = new Loader( this );
+	this.materialLoader = new THREE.MaterialLoader();
 
 	this.camera = _DEFAULT_CAMERA.clone();
 
@@ -369,6 +371,28 @@ Editor.prototype = {
 
 		material.name = name;
 		this.signals.sceneGraphChanged.dispatch();
+
+	},
+	
+	setMaterialFromJSON: function ( matJSON, object ) {
+
+		materialLoader.load(matJSON,
+
+		// onLoad callback
+		function ( material ) {
+			object.material = material;
+		},
+
+		// onProgress callback
+		function ( xhr ) {
+			console.log( (xhr.loaded / xhr.total * 100) + '% loaded' );
+		},
+
+		// onError callback
+		function ( err ) {
+			console.log( 'An error happened' );
+		});
+		
 
 	},
 
