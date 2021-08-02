@@ -47,6 +47,11 @@
 		<script src="js/libs/tern-threejs/threejs.js"></script>
 		<script src="js/libs/signals.min.js"></script>
 		
+		<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+
+		<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+  		<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-firestore.js"></script>
+		
 		<script id="selectionVertexShader" type="x-shader/x-vertex">
 
 			precision mediump float;
@@ -93,6 +98,25 @@
 			}
 
 		</script>
+		
+		<script>
+		    
+		    var firebaseConfig = {
+			    apiKey: "AIzaSyA7x5iVfkDlAiCx66eaC0DCsLSeC1c_oDs",
+			    authDomain: "liminal-49399.firebaseapp.com",
+			    projectId: "liminal-49399",
+			    storageBucket: "liminal-49399.appspot.com",
+			    messagingSenderId: "317204945906",
+			    appId: "1:317204945906:web:358f8f6f34c01abd10e96b"
+  		   };
+
+		    
+		    firebase.initializeApp(firebaseConfig);
+			
+		    var fireStoreDB = firebase.firestore();
+		    
+  		</script>
+		
 
 		<script type="module">
 
@@ -322,6 +346,25 @@
 				}
 
 			}
+			
+			function saveProduct() {
+				console.log('saving product');
+				
+				fireStoreDB.collection("product").add({
+				    modelfile: "tttteststt",
+				    name: "testing",
+				    annotations: "sssss sss sss sss"
+				})
+				.then((docRef) => {
+				    console.log("Document written with ID: ", docRef.id);
+				})
+				.catch((error) => {
+				    console.error("Error adding document: ", error);
+				});
+
+			}
+			
+			
 
 		</script>
 	</body>
