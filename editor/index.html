@@ -347,7 +347,7 @@
 
 			}
 			
-			function saveProduct() {
+			const saveProduct = () => {
 				console.log('saving product');
 				
 				fireStoreDB.collection("product").add({
@@ -364,6 +364,7 @@
 
 			}
 			
+			window.saveProduct = saveProduct;
 			
 
 		</script>
