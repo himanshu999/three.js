@@ -64,7 +64,7 @@ function MenubarFile( editor ) {
 
 	var option = new UIRow();
 	option.setClass( 'option' );
-	option.setTextContent('Save Product') );
+	option.setTextContent('Save Product');
 	option.onClick( function () {
 		
 		window.saveProduct();
