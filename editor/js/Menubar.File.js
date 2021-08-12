@@ -64,10 +64,10 @@ function MenubarFile( editor ) {
 
 	var option = new UIRow();
 	option.setClass( 'option' );
-	option.setTextContent( strings.getKey( 'Save Product' ) );
+	option.setTextContent('Save Product') );
 	option.onClick( function () {
 		
-		alert('Product Saved Successfully');
+		window.saveProduct();
 
 	} );
 	options.add( option ); 
