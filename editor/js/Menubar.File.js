@@ -237,7 +237,7 @@ function MenubarFile( editor ) {
 	option.setTextContent( strings.getKey( 'menubar/file/export/glb' ) );
 	option.onClick( async function () { */
 
-	function exportToGLB() {
+	async function exportToGLB() {
 		
 		var scene = editor.scene;
 		var animations = getAnimations( scene );
