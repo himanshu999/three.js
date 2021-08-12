@@ -357,9 +357,11 @@
 				})
 				.then((docRef) => {
 				    console.log("Document written with ID: ", docRef.id);
+				    alert("Product saved successfully");
 				})
 				.catch((error) => {
 				    console.error("Error adding document: ", error);
+				    alert("Product could not be saved. Please check your internet connection");
 				});
 
 			}
