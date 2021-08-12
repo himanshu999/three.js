@@ -97,6 +97,10 @@ class UIElement {
 		return this;
 
 	}
+	
+	setAttribute(attributeName, attributeValue){
+		this.dom.setAttribute(attributeName, attributeValue);
+	}
 
 	setStyle( style, array ) {
 
