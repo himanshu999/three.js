@@ -38,7 +38,8 @@ function SidebarAnnotations(editor){
 	  var hospotNumberRow = new UIRow();
 	  hospotNumberRow.add( new UIText( 'Number' ).setWidth( '90px' ) );
 
-	  var numberInput = new UIInput().addClass('numberInput').setValue(editor.hotspotPoints.length+1).onChange(() => {
+	  let number = editor.hotspotPoints.length+1;
+	  var numberInput = new UIInput().addClass('numberInput').setValue(number).onChange(() => {
 
 	  });
 	  hospotNumberRow.add(numberInput);
@@ -46,7 +47,7 @@ function SidebarAnnotations(editor){
 
 
 	  var hotspotDescRow = new UIRow();
-	  var hotspotDescInput = new UITextArea().setWidth('100%').setHeight('5rem').setValue('Type a description here...').onChange(() => {
+	  var hotspotDescInput = new UITextArea().setWidth('100%').setHeight('5rem').setValue('Type a description here...').setAttribute('data-num', number).onChange(() => {
 
 	  });
 	  hotspotDescRow.add(hotspotDescInput);
