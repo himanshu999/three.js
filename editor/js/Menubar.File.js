@@ -71,8 +71,11 @@ function MenubarFile( editor ) {
 		exportToGLB(modelRef);
 		const textareas = document.getElementsByClassName('TextArea');
 		Array.from(textareas).forEach((textarea) => {
-			console.log(editor.hotspotPoints);
+			console.log(JSON.stringify(editor.hotspotPoints));
+			console.log(textarea.getAttribute('data-num'));
 			let point = editor.hotspotPoints.find((pt) => (pt.number === textarea.getAttribute('data-num')));
+			
+			
 			point.desc = textarea.value;
 		});
 		const product = {name: 'Test001', annotations: JSON.stringify(editor.hotspotPoints), modelFile: 'gs://'+modelRef.bucket+'/'+modelRef.fullPath};
