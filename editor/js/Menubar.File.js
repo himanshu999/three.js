@@ -67,7 +67,7 @@ function MenubarFile( editor ) {
 	option.setTextContent('Save Product');
 	option.onClick( function () {
 		
-		exportTOGLB();
+		exportToGLB();
 		//window.saveProduct();
 
 	} );
