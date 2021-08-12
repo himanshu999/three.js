@@ -734,6 +734,10 @@ Editor.prototype = {
 
 		this.history.redo();
 
+	}, 
+	
+	saveProduct: function(){
+		console.log('save product in editor js called');
 	}
 
 };
