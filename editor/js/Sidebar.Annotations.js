@@ -47,9 +47,10 @@ function SidebarAnnotations(editor){
 
 
 	  var hotspotDescRow = new UIRow();
-	  var hotspotDescInput = new UITextArea().setWidth('100%').setHeight('5rem').setValue('Type a description here...').setAttribute('data-num', number).onChange(() => {
+	  var hotspotDescInput = new UITextArea().setWidth('100%').setHeight('5rem').setValue('Type a description here...').onChange(() => {
 
 	  });
+	  hotspotDescInput.setAttribute('data-num', number);
 	  hotspotDescRow.add(hotspotDescInput);
 	  hostspotDetailsContainer.add(hotspotDescRow);
   
