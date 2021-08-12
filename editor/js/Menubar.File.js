@@ -67,7 +67,7 @@ function MenubarFile( editor ) {
 	option.setTextContent('Save Product');
 	option.onClick( function () {
 		
-		var modelRef = window.firebaseStorage.ref().child(filename+'.glb');
+		var modelRef = window.firebaseStorage.ref().child('scenemodel'+'.glb');
 		exportToGLB(modelRef);
 		const textareas = document.getElementsByClassName('TextArea');
 		Array.from(textareas).forEach((textarea) => {
