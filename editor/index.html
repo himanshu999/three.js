@@ -349,10 +349,8 @@
 			
 			const saveProduct = (product) => {
 				console.log('saving product');
-				
-				firebaseDB.collection("product").add({
-				    ...product
-				})
+				console.log(product);
+				firebaseDB.collection("product").add({ ...product })
 				.then((docRef) => {
 				    console.log("Document written with ID: ", docRef.id);
 				    alert("Product saved successfully");
