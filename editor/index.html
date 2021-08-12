@@ -347,13 +347,11 @@
 
 			}
 			
-			const saveProduct = () => {
+			const saveProduct = (product) => {
 				console.log('saving product');
 				
 				firebaseDB.collection("product").add({
-				    modelfile: "tttteststt",
-				    name: "testing",
-				    annotations: "sssss sss sss sss"
+				    ...product
 				})
 				.then((docRef) => {
 				    console.log("Document written with ID: ", docRef.id);
