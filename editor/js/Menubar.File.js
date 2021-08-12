@@ -67,8 +67,17 @@ function MenubarFile( editor ) {
 	option.setTextContent('Save Product');
 	option.onClick( function () {
 		
-		exportToGLB();
-		//window.saveProduct();
+		var modelRef = window.firebaseStorage.ref().child(filename+'.glb');
+		exportToGLB(modelRef);
+		const textareas = document.getElementsByClassName('TextArea');
+		Array.from(textareas).forEach((textarea) => {
+			
+			let point = editor.hotspotPoints.find(point => point.number === textarea.getAttribute('data-num'));
+			point.desc = textarea.value;
+		});
+		const product = {name: 'Test001', annotations: JSON.stringify(editor.hotspotPoints), modelFile: modelRef};
+		
+		window.saveProduct(product);
 
 	} );
 	options.add( option ); 
@@ -237,7 +246,7 @@ function MenubarFile( editor ) {
 	option.setTextContent( strings.getKey( 'menubar/file/export/glb' ) );
 	option.onClick( async function () { */
 
-	async function exportToGLB() {
+	async function exportToGLB(modelRef) {
 		
 		var scene = editor.scene;
 		var animations = getAnimations( scene );
@@ -248,7 +257,7 @@ function MenubarFile( editor ) {
 
 		exporter.parse( scene, function ( result ) {
 
-			saveArrayBuffer( result, 'scene.glb' );
+			saveArrayBuffer( result, modelRef, 'scene.glb' );
 
 		}, { binary: true, animations: animations } );
 
@@ -485,7 +494,7 @@ function MenubarFile( editor ) {
 	//
 
 	var link = document.createElement( 'a' );
-	function save( blob, filename ) {
+	function save( blob, modelRef, filename ) {
 
 		/*if ( link.href ) {
 
@@ -497,7 +506,7 @@ function MenubarFile( editor ) {
 		link.download = filename || 'data.json';
 		link.dispatchEvent( new MouseEvent( 'click' ) );*/
 		filename = filename || 'model'+Math.floor(Math.random()*(999-100+1)+100);
-		var modelRef = window.firebaseStorage.ref().child(filename+'.glb');
+		
 		
 		modelRef.put(blob).then((snapshot) => {
   			console.log('Uploaded a blob!');
@@ -505,9 +514,9 @@ function MenubarFile( editor ) {
 
 	}
 
-	function saveArrayBuffer( buffer, filename ) {
+	function saveArrayBuffer( buffer, modelRef, filename ) {
 
-		save( new Blob( [ buffer ], { type: 'application/octet-stream' } ), filename );
+		save( new Blob( [ buffer ], { type: 'application/octet-stream' } ), modelRef, filename );
 
 	}
 
