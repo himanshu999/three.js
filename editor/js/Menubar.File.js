@@ -73,7 +73,7 @@ function MenubarFile( editor ) {
 		Array.from(textareas).forEach((textarea) => {
 			console.log(JSON.stringify(editor.hotspotPoints));
 			console.log(textarea.getAttribute('data-num'));
-			let point = editor.hotspotPoints.find((pt) => (pt.number === textarea.getAttribute('data-num')));
+			let point = editor.hotspotPoints.find((pt) => (pt.number.toString() == textarea.getAttribute('data-num')));
 			
 			
 			point.desc = textarea.value;
