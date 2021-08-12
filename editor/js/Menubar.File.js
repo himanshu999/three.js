@@ -75,7 +75,7 @@ function MenubarFile( editor ) {
 			let point = editor.hotspotPoints.find(point => point.number === textarea.getAttribute('data-num'));
 			point.desc = textarea.value;
 		});
-		const product = {name: 'Test001', annotations: JSON.stringify(editor.hotspotPoints), modelFile: modelRef};
+		const product = {name: 'Test001', annotations: JSON.stringify(editor.hotspotPoints), modelFile: 'gs://'+modelRef.bucket+'/'+modelRef.fullPath};
 		
 		window.saveProduct(product);
 
