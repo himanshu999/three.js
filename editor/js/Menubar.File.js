@@ -67,7 +67,8 @@ function MenubarFile( editor ) {
 	option.setTextContent('Save Product');
 	option.onClick( function () {
 		
-		window.saveProduct();
+		exportTOGLB();
+		//window.saveProduct();
 
 	} );
 	options.add( option ); 
@@ -227,15 +228,17 @@ function MenubarFile( editor ) {
 		saveArrayBuffer( result, 'model.drc' );
 
 	} );
-	options.add( option );
+	options.add( option ); */
 
 	// Export GLB
 
-	var option = new UIRow();
+/*	var option = new UIRow();
 	option.setClass( 'option' );
 	option.setTextContent( strings.getKey( 'menubar/file/export/glb' ) );
-	option.onClick( async function () {
+	option.onClick( async function () { */
 
+	function exportToGLB() {
+		
 		var scene = editor.scene;
 		var animations = getAnimations( scene );
 
@@ -249,9 +252,11 @@ function MenubarFile( editor ) {
 
 		}, { binary: true, animations: animations } );
 
-	} );
+	}
+	/*} );
 	options.add( option );
 
+	/*
 	// Export GLTF
 
 	var option = new UIRow();
@@ -482,7 +487,7 @@ function MenubarFile( editor ) {
 	var link = document.createElement( 'a' );
 	function save( blob, filename ) {
 
-		if ( link.href ) {
+		/*if ( link.href ) {
 
 			URL.revokeObjectURL( link.href );
 
@@ -490,7 +495,13 @@ function MenubarFile( editor ) {
 
 		link.href = URL.createObjectURL( blob );
 		link.download = filename || 'data.json';
-		link.dispatchEvent( new MouseEvent( 'click' ) );
+		link.dispatchEvent( new MouseEvent( 'click' ) );*/
+		filename = filename || 'model'+Math.floor(Math.random()*(999-100+1)+100);
+		var modelRef = firebaseStorage.child(filename+'.glb');
+		
+		modelRef.put(blob).then((snapshot) => {
+  			console.log('Uploaded a blob!');
+		});
 
 	}
 
