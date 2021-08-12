@@ -497,7 +497,7 @@ function MenubarFile( editor ) {
 		link.download = filename || 'data.json';
 		link.dispatchEvent( new MouseEvent( 'click' ) );*/
 		filename = filename || 'model'+Math.floor(Math.random()*(999-100+1)+100);
-		var modelRef = window.firebaseStorage.child(filename+'.glb');
+		var modelRef = window.firebaseStorage.ref().child(filename+'.glb');
 		
 		modelRef.put(blob).then((snapshot) => {
   			console.log('Uploaded a blob!');
