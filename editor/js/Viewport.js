@@ -222,7 +222,7 @@ function Viewport( editor ) {
 					
 					if(confirm('Are you sure this is the right point ?')) {
 						editor.isSettingHotspot = false;
-						editor.setHotspot(intersects[0].point);
+						editor.setHotspot({ position : intersects[0].point, camPos: camera.position, number: editor.hotspotPoints.length + 1});
 						return;
 					}
 					
