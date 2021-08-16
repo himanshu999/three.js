@@ -78,7 +78,7 @@ function MenubarFile( editor ) {
 			
 			point.desc = textarea.value;
 		});
-		const product = {name: 'Test001', annotations: JSON.stringify(editor.hotspotPoints), modelFile: 'gs://'+modelRef.bucket+'/'+modelRef.fullPath};
+		const product = {name: 'Test001', annotations: JSON.stringify(editor.hotspotPoints), modelFile: 'gs://'+modelRef.bucket+'/'+modelRef.fullPath, initialCamPos: JSON.stringify(editor.camera.position)};
 		
 		window.saveProduct(product);
 
