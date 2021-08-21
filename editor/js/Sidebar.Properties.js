@@ -1,7 +1,7 @@
 import { UIPanel } from './libs/ui.js';
 
 import { SidebarMaterial } from './Sidebar.Material.js';
-import {SidebarMaterialList} from './Sidebar.MaterialList.js';
+//import {SidebarMaterialList} from './Sidebar.MaterialList.js';
 
 function SidebarProperties( editor ) {
 
@@ -11,7 +11,7 @@ function SidebarProperties( editor ) {
 	container.setId( 'properties' );
 
 	container.add(new SidebarMaterial( editor ));
-	container.add(new SidebarMaterialList(editor));
+	//container.add(new SidebarMaterialList(editor));
 
 	return container;
 	
