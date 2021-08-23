@@ -28,6 +28,8 @@ var materialClasses = {
 	'PointsMaterial': THREE.PointsMaterial
 };
 
+const repeatX = 18;
+
 function SidebarMaterial( editor ) {
 
 	var strings = editor.strings;
@@ -241,11 +243,7 @@ function SidebarMaterial( editor ) {
 		
 		 console.log(currentMaterialName);
 		
-		 material.textures.forEach(tex => {
-		 	tex.wrapS = THREE.RepeatWrapping;
-			tex.wrapT = THREE.RepeatWrapping;
-			tex.repeat.set( 18, 18 );
-		 });
+		 
 		
 		 let materialJSON = material.toJSON();
 		
@@ -389,6 +387,10 @@ function SidebarMaterial( editor ) {
 
 					var map = mapEnabled ? materialMap.getValue() : null;
 					if ( material.map !== map ) {
+						
+						map.wrapS = THREE.RepeatWrapping;
+						map.wrapT = THREE.RepeatWrapping;
+						map.repeat.set( repeatX, repeatX );
 
 						editor.execute( new SetMaterialMapCommand( editor, currentObject, 'map', map, currentMaterialSlot ) );
 
@@ -411,6 +413,10 @@ function SidebarMaterial( editor ) {
 
 					var normalMap = normalMapEnabled ? materialNormalMap.getValue() : null;
 					if ( material.normalMap !== normalMap ) {
+						
+						normalMap.wrapS = THREE.RepeatWrapping;
+						normalMap.wrapT = THREE.RepeatWrapping;
+						normalMap.repeat.set( repeatX, repeatX );
 
 						editor.execute( new SetMaterialMapCommand( editor, currentObject, 'normalMap', normalMap, currentMaterialSlot ) );
 
@@ -457,6 +463,10 @@ function SidebarMaterial( editor ) {
 
 					var aoMap = aoMapEnabled ? materialAOMap.getValue() : null;
 					if ( material.aoMap !== aoMap ) {
+						
+						aoMap.wrapS = THREE.RepeatWrapping;
+						aoMap.wrapT = THREE.RepeatWrapping;
+						aoMap.repeat.set( repeatX, repeatX );
 
 						editor.execute( new SetMaterialMapCommand( editor, currentObject, 'aoMap', aoMap, currentMaterialSlot ) );
 
