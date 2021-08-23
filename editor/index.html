@@ -47,6 +47,52 @@
 		<script src="js/libs/tern-threejs/threejs.js"></script>
 		<script src="js/libs/signals.min.js"></script>
 		
+		<script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
+                <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-firestore.js"></script>
+                <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-storage.js"></script>
+		
+		<script>
+
+			function dataURItoBlob(dataURI) {
+
+					var byteString = atob(dataURI.split(',')[1]);
+
+					// separate out the mime component
+					var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0]
+
+					// write the bytes of the string to an ArrayBuffer
+					var ab = new ArrayBuffer(byteString.length);
+
+					// create a view into the buffer
+					var ia = new Uint8Array(ab);
+
+					// set the bytes of the buffer to the correct values
+					for (var i = 0; i < byteString.length; i++) {
+						ia[i] = byteString.charCodeAt(i);
+					}
+
+					// write the ArrayBuffer to a blob, and you're done
+					var blob = new Blob([ab], {type: mimeString});
+					return blob;
+
+			}
+	  
+			  var firebaseConfig = {
+			    apiKey: "AIzaSyC2FfpALz8l9XSIxFYdMe5pQ_XzOfhfcYU",
+			    authDomain: "nextl-5bff0.firebaseapp.com",
+			    projectId: "nextl-5bff0",
+			    storageBucket: "nextl-5bff0.appspot.com",
+			    messagingSenderId: "801014308314",
+			    appId: "1:801014308314:web:2653b4b23cf76b15e274e3"
+			  };
+	  
+			  firebase.initializeApp(firebaseConfig);
+			  var firebaseDB = firebase.firestore();
+			  firebaseDB.settings({ experimentalForceLongPolling: true });
+
+			  var firebaseStorage = firebase.storage();
+		</script>	
+		
 		<script id="selectionVertexShader" type="x-shader/x-vertex">
 
 			precision mediump float;
@@ -322,6 +368,40 @@
 				}
 
 			}
+			
+			const saveMaterial = (mat) => {
+				
+				console.log(mat);
+
+				//save images first
+				const material = mat.materialJSON;
+
+				material.images.forEach((imag) => {
+
+					let imageRef = firebaseStorage.ref().child(imag.uuid + '.jpg');
+
+					imageRef.put(dataURItoBlob(imag.url)).then((snapshot) => {
+						console.log('Uploaded an image!');
+					});
+
+					imag.url = 'gs://'+imageRef.bucket+'/'+imageRef.name;
+
+				});
+
+				mat.materialJSON = JSON.stringify(material);
+
+
+				firebaseDB.collection("materials").add({...mat})
+				.then((docRef) => {
+				    console.log("Document written with ID: ", docRef.id);
+				})
+				.catch((error) => {
+				    console.error("Error adding document: ", error);
+				});
+				
+			}
+			
+			window.saveMaterial = saveMaterial;
 
 		</script>
 	</body>
