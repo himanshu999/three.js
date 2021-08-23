@@ -394,6 +394,7 @@
 				firebaseDB.collection("materials").add({...mat})
 				.then((docRef) => {
 				    console.log("Document written with ID: ", docRef.id);
+				    alert('Material Successfully Added');	
 				})
 				.catch((error) => {
 				    console.error("Error adding document: ", error);
