@@ -241,7 +241,18 @@ function SidebarMaterial( editor ) {
 		
 		 console.log(currentMaterialName);
 		
-		 matCategorised[currentMaterialCategory].some((mat, index) => {
+		 material.textures.forEach(tex => {
+		 	tex.wrapS = THREE.RepeatWrapping;
+			tex.wrapT = THREE.RepeatWrapping;
+			tex.repeat.set( 18, 18 );
+		 });
+		
+		 let materialJSON = material.toJSON();
+		
+		
+		 window.saveMaterial({name: currentMaterialName, category: currentMaterialCategory , materialJSON});
+		
+		/* matCategorised[currentMaterialCategory].some((mat, index) => {
 		 	if(mat.name === currentMaterialName){
 				matCategorised[currentMaterialCategory][index] = {...material.toJSON(), name: currentMaterialName};
 				return true;
@@ -251,10 +262,10 @@ function SidebarMaterial( editor ) {
 				return true;
 			}	
 				
-		 });
+		 });  */
 		
 	        
-	         signals.materialListChanged.dispatch();
+	         //signals.materialListChanged.dispatch();
 		
 		
 	});
