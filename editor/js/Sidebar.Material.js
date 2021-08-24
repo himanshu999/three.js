@@ -389,16 +389,16 @@ function SidebarMaterial( editor ) {
 
 					var map = mapEnabled ? materialMap.getValue() : null;
 					
-					if(mapEnabled){
+					
+					
+					if ( material.map !== map || material.map.repeat.x !== materialMapRepeatNum.getValue() ) {
+						
+						if(mapEnabled){
 							map.wrapS = THREE.RepeatWrapping;
 							map.wrapT = THREE.RepeatWrapping;
 							repeatX = materialMapRepeatNum.getValue();
 							map.repeat.set( repeatX, repeatX );
-					}
-					
-					if ( material.map !== map ) {
-						
-						
+					      }
 						
 
 						editor.execute( new SetMaterialMapCommand( editor, currentObject, 'map', map, currentMaterialSlot ) );
