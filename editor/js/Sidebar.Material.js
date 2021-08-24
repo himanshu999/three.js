@@ -421,7 +421,7 @@ function SidebarMaterial( editor ) {
 				if ( objectHasUvs ) {
 
 					var normalMap = normalMapEnabled ? materialNormalMap.getValue() : null;
-					if ( material.normalMap !== normalMap ) {
+					if ( material.normalMap !== normalMap || material.normalMap.repeat.x !== repeatX) {
 						
 						if(normalMapEnabled){
 							normalMap.wrapS = THREE.RepeatWrapping;
@@ -473,7 +473,7 @@ function SidebarMaterial( editor ) {
 				if ( objectHasUvs ) {
 
 					var aoMap = aoMapEnabled ? materialAOMap.getValue() : null;
-					if ( material.aoMap !== aoMap ) {
+					if ( material.aoMap !== aoMap || material.aoMap.repeat.x !== repeatX) {
 						
 						aoMap.wrapS = THREE.RepeatWrapping;
 						aoMap.wrapT = THREE.RepeatWrapping;
