@@ -28,7 +28,7 @@ var materialClasses = {
 	'PointsMaterial': THREE.PointsMaterial
 };
 
-const repeatX = 14;
+var repeatX = 14;
 
 function SidebarMaterial( editor ) {
 
