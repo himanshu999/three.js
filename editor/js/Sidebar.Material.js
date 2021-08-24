@@ -388,12 +388,18 @@ function SidebarMaterial( editor ) {
 				if ( objectHasUvs ) {
 
 					var map = mapEnabled ? materialMap.getValue() : null;
+					
+					if(mapEnabled){
+							map.wrapS = THREE.RepeatWrapping;
+							map.wrapT = THREE.RepeatWrapping;
+							repeatX = materialMapRepeatNum.getValue();
+							map.repeat.set( repeatX, repeatX );
+					}
+					
 					if ( material.map !== map ) {
 						
-						map.wrapS = THREE.RepeatWrapping;
-						map.wrapT = THREE.RepeatWrapping;
-						repeatX = materialMapRepeatNum.getValue();
-						map.repeat.set( repeatX, repeatX );
+						
+						
 
 						editor.execute( new SetMaterialMapCommand( editor, currentObject, 'map', map, currentMaterialSlot ) );
 
@@ -417,9 +423,11 @@ function SidebarMaterial( editor ) {
 					var normalMap = normalMapEnabled ? materialNormalMap.getValue() : null;
 					if ( material.normalMap !== normalMap ) {
 						
-						normalMap.wrapS = THREE.RepeatWrapping;
-						normalMap.wrapT = THREE.RepeatWrapping;
-						normalMap.repeat.set( repeatX, repeatX );
+						if(normalMapEnabled){
+							normalMap.wrapS = THREE.RepeatWrapping;
+							normalMap.wrapT = THREE.RepeatWrapping;
+							normalMap.repeat.set( repeatX, repeatX );
+						}	
 
 						editor.execute( new SetMaterialMapCommand( editor, currentObject, 'normalMap', normalMap, currentMaterialSlot ) );
 
