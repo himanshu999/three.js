@@ -28,7 +28,7 @@ var materialClasses = {
 	'PointsMaterial': THREE.PointsMaterial
 };
 
-const repeatX = 18;
+const repeatX = 14;
 
 function SidebarMaterial( editor ) {
 
@@ -167,10 +167,12 @@ function SidebarMaterial( editor ) {
 	var materialMapRow = new UIRow();
 	var materialMapEnabled = new UICheckbox( false ).onChange( update );
 	var materialMap = new UITexture().onChange( updateMaterial );
+	var materialMapRepeatNum = new UINumber( repeatX ).setWidth( '30px' ).onChange( update );
 
 	materialMapRow.add( new UIText( strings.getKey( 'sidebar/material/map' ) ).setWidth( '90px' ) );
 	materialMapRow.add( materialMapEnabled );
 	materialMapRow.add( materialMap );
+	materialMapRow.add( materialMapRepeatNum );
 
 	container.add( materialMapRow );
 
@@ -390,6 +392,7 @@ function SidebarMaterial( editor ) {
 						
 						map.wrapS = THREE.RepeatWrapping;
 						map.wrapT = THREE.RepeatWrapping;
+						repeatX = materialMapRepeatNum.getValue();
 						map.repeat.set( repeatX, repeatX );
 
 						editor.execute( new SetMaterialMapCommand( editor, currentObject, 'map', map, currentMaterialSlot ) );
